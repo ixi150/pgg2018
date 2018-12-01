@@ -1,62 +1,34 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CollectibleManager : MonoBehaviour
 {
-    #region Singleton
+    public GameObject collectiblePrefab;
 
-    private static CollectibleManager instance;
-    public static CollectibleManager Instance
+    private Collectible _item;
+
+    private void Start()
     {
-        get
-        {
-            if(instance == null)
-                instance = FindObjectOfType<CollectibleManager>();
-            return instance;
-        }
+        SpawnItem();
     }
 
-    #endregion
-
-
-
-    #region Properties
-
-    [SerializeField]
-    private List<Collectible> _collectiblePool;
-
-    #endregion
-
-
-
-    #region MonoBehaviour
-
-    private void Awake()
+    public void SpawnNewItem()
     {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        instance = this;
+        StartCoroutine(Spawn());
     }
 
-    private void OnDestroy()
+    IEnumerator Spawn()
     {
-        instance = null;
+        yield return new WaitForSeconds(1);
+        SpawnItem();
     }
 
-    #endregion
 
-
-
-    #region Controller
-
-    private Collectible CreateCollectible(Collectible collectible, Vector3 position)
+    void SpawnItem()
     {
-        Collectible obj = Instantiate(collectible, position, Quaternion.identity);
-        return obj;
+        var item = Instantiate(collectiblePrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity).GetComponent<Collectible>();
+        item.init(this);
+        _item = item;
     }
-
-    #endregion
 }
