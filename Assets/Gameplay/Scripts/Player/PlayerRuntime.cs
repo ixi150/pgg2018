@@ -11,6 +11,10 @@ public class PlayerRuntime : MonoBehaviour
     private float _speedMultiplier;
     [SerializeField]
     private float _rotationMultiplier;
+    [SerializeField]
+    private Transform _playerAss, _shotPrefab;
+
+    private Transform _shotParent;
 
     private List<PlayerExtension> _extensions;
 
@@ -19,6 +23,7 @@ public class PlayerRuntime : MonoBehaviour
 
     private void Awake()
     {
+        _shotParent = GameObject.Find("[BULLET_PARENT]").transform;
         _lastMoveDirection = transform.forward;
         _playerState = PlayerState.Idle;
         rigid = GetComponent<Rigidbody>();
@@ -57,9 +62,17 @@ public class PlayerRuntime : MonoBehaviour
         Debug.LogWarning("PLAYER STATE CHANGED TO: " + to.ToString());
     }
 
+    private void ShotFromAss()
+    {
+        Transform obj = Instantiate(_shotPrefab, _playerAss.position, _playerAss.rotation);
+        obj.parent = _shotParent;
+    }
+
     private void OnStateChanged(PlayerState state)
     {
         DoStateTransition(_playerState, state);
+        if (state == PlayerState.ReleaseFart)
+            ShotFromAss();
     }
 
     private void OnMoveChanged(Vector2 axis)
