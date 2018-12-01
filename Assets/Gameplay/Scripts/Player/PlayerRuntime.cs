@@ -1,16 +1,23 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerRuntime : MonoBehaviour
 {
     public PlayerState PlayerState { get { return _playerState; } }
     private PlayerState _playerState;
 
+    [SerializeField]
+    private float _speedMultiplier;
+
     private List<PlayerExtension> _extensions;
+
+    private Rigidbody rigid;
 
     private void Awake()
     {
         _playerState = PlayerState.Idle;
+        rigid = GetComponent<Rigidbody>();
     }
 
     public void RegisterExtension(PlayerExtension extension)
@@ -46,7 +53,9 @@ public class PlayerRuntime : MonoBehaviour
 
     private void OnMoveChanged(Vector2 axis)
     {
-        Debug.LogWarning("PLAYER MOVE CHANGED TO: " + axis.ToString());
+        Vector3 realAxis = new Vector3(axis.x, 0f, axis.y);
+        rigid.MovePosition(transform.position + realAxis * _speedMultiplier * Time.deltaTime);
+        //Debug.LogWarning("PLAYER MOVE CHANGED TO: " + axis.ToString());
     }
 }
 
