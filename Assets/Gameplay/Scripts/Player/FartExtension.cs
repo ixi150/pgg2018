@@ -2,8 +2,13 @@
 
 public class FartExtension : PlayerExtension
 {
-    public override void OnSecondaryInput()
+    public override void OnSecondaryInputDown()
     {
-        OnStateChanged(PlayerState.Fart);
+        OnStateChanged(PlayerState.StartFart);
+    }
+
+    public override void OnSecondaryInputUp()
+    {
+        OnStateChanged(PlayerState.ReleaseFart);
     }
 }

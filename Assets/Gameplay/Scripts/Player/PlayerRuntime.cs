@@ -56,6 +56,7 @@ public enum PlayerState
     Move,
     CollectItem,
     AttackPlayer,
-    Fart,
+    StartFart,
+    ReleaseFart,
     GiveItems
 }

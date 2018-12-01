@@ -5,28 +5,46 @@ interface IPlayerExtension
 {
     void OnMoveInput(Vector2 axis);
     void OnPrimaryInput();
-    void OnSecondaryInput();
+    void OnSecondaryInputDown();
+    void OnSecondaryInputUp();
 
     event Action<PlayerState> StateChanged;
 }
 
+[RequireComponent(typeof(Player))]
 [RequireComponent(typeof(PlayerRuntime))]
 public class PlayerExtension : MonoBehaviour, IPlayerExtension
 {
-    protected PlayerRuntime _baseScript;
-    //HERE REGISTER THE INPUT MANAGER AND PLAYER
+    protected Player _baseScript;
+    protected PlayerRuntime _runtimeScript;
+
     private void Awake()
     {
-        _baseScript = GetComponent<PlayerRuntime>();
-        _baseScript.RegisterExtension(this);
+        _baseScript = GetComponent<Player>();
+        _runtimeScript = GetComponent<PlayerRuntime>();
+        _runtimeScript.RegisterExtension(this);
+    }
+
+    private void Start()
+    {
+        _baseScript.MoveInput += OnMoveInput;
+        _baseScript.PrimaryInput += OnPrimaryInput;
+        _baseScript.SecondaryInputDown += OnSecondaryInputDown;
+        _baseScript.SecondaryInputUp += OnSecondaryInputUp;
     }
 
     private void OnDestroy()
     {
         if (_baseScript != null)
-            _baseScript.DeregisterExtension(this);
+        {
+            _baseScript.MoveInput -= OnMoveInput;
+            _baseScript.PrimaryInput -= OnPrimaryInput;
+            _baseScript.SecondaryInputDown -= OnSecondaryInputDown;
+            _baseScript.SecondaryInputUp -= OnSecondaryInputUp;
+        }
+        if (_runtimeScript != null)
+            _runtimeScript.DeregisterExtension(this);
     }
-    //
 
     public virtual void OnMoveInput(Vector2 axis)
     {
@@ -38,7 +56,12 @@ public class PlayerExtension : MonoBehaviour, IPlayerExtension
 
     }
 
-    public virtual void OnSecondaryInput()
+    public virtual void OnSecondaryInputDown()
+    {
+
+    }
+
+    public virtual void OnSecondaryInputUp()
     {
 
     }
