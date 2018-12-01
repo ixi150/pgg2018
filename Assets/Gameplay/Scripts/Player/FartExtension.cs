@@ -12,7 +12,7 @@ public class FartExtension : PlayerExtension
         if (_baseScript.eaten.Count > 0)
         {
             OnStateChanged(PlayerState.ReleaseFart);
-            _baseScript.RemoveLastEaten();
+            _baseScript.RemoveLastEaten(); 
         }
     }
 }
