@@ -5,6 +5,7 @@ using UnityEngine;
 using GamepadInput;
 
 using Xunity.ScriptableVariables;
+using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
 {
@@ -12,7 +13,10 @@ public class Player : MonoBehaviour
     public PlayerInput input;
     public string[] joystickNames;
 
-    public List<CollectibleType> eaten;
+    public float throwUpOffset = 0.5f;
+    public Vector3 minThrowUpPower;
+    public Vector3 maxThrowUpPower;
+    public List<CollectibleType> eaten = new List<CollectibleType>();
 
     public new BoxCollider collider;
 
@@ -72,6 +76,34 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void ThrowUp()
+    {
+        if (eaten.Count <= 0) return;
+
+        int i = UnityEngine.Random.Range(0, eaten.Count);
+        var item = eaten[i];
+        eaten.RemoveAt(i);
+        Vector3 power = new Vector3();
+        power.x = Random.Range(minThrowUpPower.x, maxThrowUpPower.x);
+        power.y = Random.Range(minThrowUpPower.y, maxThrowUpPower.y);
+        power.z = Random.Range(minThrowUpPower.z, maxThrowUpPower.z);
+        var throwed = Instantiate(item.Prefab, transform.position + power.normalized * throwUpOffset, Quaternion.identity);
+        throwed.GetComponent<Rigidbody>().AddForce(power);
+    }
+
+    public void ThrowUp(int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            ThrowUp();
+        }
+    }
+
+    public void ThrowUpAll()
+    {
+        ThrowUp(eaten.Count);
+    }
+
     public event Action SecondaryInputDown;
     private void OnSecondaryInputDown()
     {
@@ -98,6 +130,7 @@ public class Player : MonoBehaviour
         eaten.Clear();
         return collectibles;
     }
+    
 
     public void RemoveLastEaten()
     {

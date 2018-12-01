@@ -24,7 +24,7 @@ public class Collectible : MonoBehaviour, ICollectible
 
     public void OnEat()
     {
-        manager.SpawnNewItem();
+        if(manager) manager.SpawnNewItem();
         Destroy(gameObject);
     }
 }
