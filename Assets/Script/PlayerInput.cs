@@ -1,19 +1,12 @@
 ﻿using UnityEngine;
-
-public enum PlayerID
-{
-    player_1 = 1,
-    player_2 = 2,
-    player_3 = 3,
-    player_4 = 4,
-}
+using GamepadInput;
 
 [CreateAssetMenu(fileName = "Input", menuName = "Player/Input", order = 0)]
 public class PlayerInput : ScriptableObject
 {
     public int attackID = 0, shootID = 1;
 
-    public PlayerID player;
+    public GamePad.Index player;
 
     public Vector2 GetAxis()
     {

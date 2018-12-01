@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using GamepadInput;
 
 public class Player : MonoBehaviour
 {
@@ -8,13 +9,14 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (input.GetAxis() != Vector2.zero)
-            OnMoveInput(input.GetAxis());
-        if (input.GetAttackButton())
+        Vector2 axis = GamePad.GetAxis(GamePad.Axis.LeftStick, input.player);
+        if (axis != Vector2.zero)
+            OnMoveInput(axis);
+        if (GamePad.GetButtonDown(GamePad.Button.A, input.player))
             OnPrimaryInput();
-        if (input.GetShootButtonDown())
+        if (GamePad.GetButtonDown(GamePad.Button.B, input.player))
             OnSecondaryInputDown();
-        if (input.GetShootButtonUp())
+        if (GamePad.GetButtonUp(GamePad.Button.B, input.player))
             OnSecondaryInputUp();
 
         joystickNames = Input.GetJoystickNames();
