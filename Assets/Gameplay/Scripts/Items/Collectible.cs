@@ -7,9 +7,15 @@ public class Collectible : MonoBehaviour
     [SerializeField]
     private CollectibleType _collectibleType;
 
-    public void OnEat(Player player)
+    private CollectibleManager manager;
+
+    public void init(CollectibleManager manager)
     {
-        player.Eat(this);
+        this.manager = manager;
+    }
+
+    public void OnEat()
+    {
         Destroy(gameObject);
     }
 }

@@ -8,7 +8,9 @@ public class Player : MonoBehaviour
     public PlayerInput input;
     public string[] joystickNames;
 
-    public List<Collectible> eaten;
+    public List<CollectibleType> eaten;
+
+    public new BoxCollider collider;
 
     private void Update()
     {
@@ -35,8 +37,19 @@ public class Player : MonoBehaviour
     public event Action PrimaryInput;
     private void OnPrimaryInput()
     {
-        if (PrimaryInput != null)
-            PrimaryInput();
+        //if (PrimaryInput != null)
+        //    PrimaryInput();
+
+        var items = Physics.OverlapBox(collider.transform.position, collider.size);
+        for (int i = 0; i < items.Length; i++)
+        {
+            Debug.Log(items[i].name);
+            var collectiblle = items[i].GetComponent<Collectible>();
+            if (collectiblle)
+            {
+                eat(collectiblle);
+            }
+        }
     }
 
     public event Action SecondaryInputDown;
@@ -53,19 +66,20 @@ public class Player : MonoBehaviour
             SecondaryInputUp();
     }
 
-    public void Eat(Collectible collectible)
+    public void eat(Collectible collectible)
     {
-        eaten.Add(collectible);
+        eaten.Add(collectible.CollectibleType);
+        collectible.OnEat();
     }
 
-    public Collectible[] GetAllEaten()
+    public CollectibleType[] GetAllEaten()
     {
         var collectibles = eaten.ToArray();
         eaten.Clear();
         return collectibles;
     }
 
-    public void RemoveLast()
+    public void RemoveLastEaten()
     {
         eaten.RemoveAt(eaten.Count - 1);
     }
