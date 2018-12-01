@@ -70,7 +70,15 @@ public class ScriptableObjectDrawer : PropertyDrawer
 
         if (property.objectReferenceValue && _isCreated(property.objectReferenceValue))
         {
-            property.isExpanded = EditorGUI.Foldout(labelRect, property.isExpanded, property.displayName);
+            if (EditorGUI.Foldout(labelRect, property.isExpanded, property.displayName))
+            {
+                _canCache = false;
+                property.isExpanded = true;
+            }
+            else
+            {
+                property.isExpanded = false;
+            }
         }
         else
         {
