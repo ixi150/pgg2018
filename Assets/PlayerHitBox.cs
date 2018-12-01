@@ -27,7 +27,7 @@ public class PlayerHitBox : MonoBehaviour
         if (_hitObjects.Contains(other)) return;
         _hitObjects.Add(other);
 
-        var collectiblle = other.GetComponent<Collectible>();
+        var collectiblle = other.GetComponentInParent<ICollectible>();
         if (collectiblle != null)
         {
             _owner.eat(collectiblle);

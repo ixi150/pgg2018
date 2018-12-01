@@ -69,20 +69,20 @@ public class Player : MonoBehaviour
     PlayerHitBox _playerHitBox;
     private void OnPrimaryInput()
     {
-        _animator.SetTrigger("Eat");
+        _animator.Play("Eat");
         _playerHitBox.CleatHitBox();
     }
 
     public void ResetAttack()
     {
-        _animator.ResetTrigger("Eat");
+        _animator.Play("Idle", 0, 0);
     }
 
     public void ThrowUp()
     {
         if (eaten.Count <= 0) return;
 
-        int i = UnityEngine.Random.Range(0, eaten.Count);
+        int i = Random.Range(0, eaten.Count);
         var item = eaten[i];
         eaten.RemoveAt(i);
         Vector3 power = new Vector3();
@@ -120,7 +120,7 @@ public class Player : MonoBehaviour
             SecondaryInputUp();
     }
 
-    public void eat(Collectible collectible)
+    public void eat(ICollectible collectible)
     {
         eaten.Add(collectible.Type);
         collectible.OnEat();

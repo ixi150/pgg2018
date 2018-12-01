@@ -41,7 +41,7 @@ public class FartShoot : MonoBehaviour, ICollectible
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_destroyAfterTime && other.gameObject != _onwer.gameObject)
+        if (!other.isTrigger && _destroyAfterTime && other.GetComponentInParent<Player>() != _onwer)
         {
             var player = other.GetComponentInParent<Player>();
             if (player == true)
