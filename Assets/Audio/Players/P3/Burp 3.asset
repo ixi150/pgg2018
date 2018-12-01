@@ -9,19 +9,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13a9f940313d06d4caed9863bf024ebf, type: 3}
-  m_Name: Player hurt
+  m_Name: Burp 3
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: a976e46790a73f84083f43ac45e5d5de, type: 3}
-  - {fileID: 8300000, guid: 577453eec01fe86408b5b328f2a41b7e, type: 3}
-  - {fileID: 8300000, guid: 7dd9c63d3cc239a4fb160413093f28c1, type: 3}
-  - {fileID: 8300000, guid: d1139de6582240c4895f2f2d0fcf53ea, type: 3}
+  - {fileID: 8300000, guid: 639eab07ded1ed54ab94cfea8319c942, type: 3}
+  - {fileID: 8300000, guid: 45170b5cf0cd6d848bcc94f97bf0d9ce, type: 3}
+  - {fileID: 8300000, guid: 565fa645ab9c9ff4b9b85df9b923a224, type: 3}
+  - {fileID: 8300000, guid: 9ac43706a8f23814db2e3d8d2c7315dc, type: 3}
   volume:
-    minValue: 0.5
-    maxValue: 0.60317457
+    minValue: 0.5222222
+    maxValue: 0.7222222
   pitch:
-    minValue: 1.0892855
-    maxValue: 1.375
+    minValue: 1.4452379
+    maxValue: 1.5416667
   time: 0
   loop: 0
   mixer: {fileID: 243564214219198130, guid: 5927d8f3f31623a4fb68f3aadc6a523d, type: 2}

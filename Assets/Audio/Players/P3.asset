@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff508a5b857146e080e42ac8350037bd, type: 3}
+  m_Name: P3
+  m_EditorClassIdentifier: 
+  biteHit: {fileID: 11400000, guid: ae5308d27ccf6544faf52f81f112e3ca, type: 2}
+  biteTry: {fileID: 11400000, guid: 194bf3be1c4f9e54ab092d2d27391688, type: 2}
+  burp: {fileID: 11400000, guid: 6093f93582c2f714f989ad928f562687, type: 2}
+  fart: {fileID: 11400000, guid: 87f584d056eed0d45959f43427133424, type: 2}
+  hurt: {fileID: 11400000, guid: 92b935002a1c0aa45a58ff80283fa0b8, type: 2}
+  laugh: {fileID: 11400000, guid: 99e4bfe2e3733f141a3d8672a83b94b3, type: 2}
+  step: {fileID: 11400000, guid: 29efc1d3002a6d94a9e7c2c1892615fb, type: 2}

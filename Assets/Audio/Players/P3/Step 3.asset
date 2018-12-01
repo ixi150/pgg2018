@@ -9,19 +9,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13a9f940313d06d4caed9863bf024ebf, type: 3}
-  m_Name: Fart
+  m_Name: Step 3
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: ae807bfe3e455bf45b96a809e95adf91, type: 3}
-  - {fileID: 8300000, guid: 3e2cfafa7a0e591459e70e1b2b5993e9, type: 3}
-  - {fileID: 8300000, guid: 179bb952d87a7794eb9b648b2de1b78e, type: 3}
-  - {fileID: 8300000, guid: 0ecd9a40f634aa24d95861c700088f4d, type: 3}
+  - {fileID: 8300000, guid: 8df1720f134dd5d4ca7e0f40012bf3b4, type: 3}
+  - {fileID: 8300000, guid: 24027924028d0d94eb50934b1bf62832, type: 3}
+  - {fileID: 8300000, guid: 8d8ce8b6a03b84a489b455490d88973b, type: 3}
+  - {fileID: 8300000, guid: 7a28764d0d2360648bf5dfc88e13bd77, type: 3}
+  - {fileID: 8300000, guid: 0b135d55831d4fb4c89b57786aec594a, type: 3}
   volume:
-    minValue: 0.42500004
-    maxValue: 0.625
+    minValue: 0.2539684
+    maxValue: 0.3809524
   pitch:
-    minValue: 0.95748025
-    maxValue: 1.3574803
+    minValue: 1.2857143
+    maxValue: 1.7301587
   time: 0
   loop: 0
   mixer: {fileID: 243564214219198130, guid: 5927d8f3f31623a4fb68f3aadc6a523d, type: 2}

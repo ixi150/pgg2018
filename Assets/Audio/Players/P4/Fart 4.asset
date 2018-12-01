@@ -9,18 +9,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13a9f940313d06d4caed9863bf024ebf, type: 3}
-  m_Name: Player laugh
+  m_Name: Fart 4
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: 1d3aaf50d891df34ab0ce82d4a104b92, type: 3}
-  - {fileID: 8300000, guid: 1fbc5157265434845989f54a93582f93, type: 3}
-  - {fileID: 8300000, guid: a1a1acdbb29318c4daf5f43e3c24a8d3, type: 3}
+  - {fileID: 8300000, guid: ae807bfe3e455bf45b96a809e95adf91, type: 3}
+  - {fileID: 8300000, guid: 3e2cfafa7a0e591459e70e1b2b5993e9, type: 3}
+  - {fileID: 8300000, guid: 179bb952d87a7794eb9b648b2de1b78e, type: 3}
+  - {fileID: 8300000, guid: 0ecd9a40f634aa24d95861c700088f4d, type: 3}
   volume:
-    minValue: 0.5
-    maxValue: 0.60317457
+    minValue: 0.42500004
+    maxValue: 0.625
   pitch:
-    minValue: 1.0892855
-    maxValue: 1.375
+    minValue: 0.95748025
+    maxValue: 1.3574803
   time: 0
   loop: 0
   mixer: {fileID: 243564214219198130, guid: 5927d8f3f31623a4fb68f3aadc6a523d, type: 2}

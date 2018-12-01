@@ -9,17 +9,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13a9f940313d06d4caed9863bf024ebf, type: 3}
-  m_Name: Bite Hit
+  m_Name: Burp 2
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: 5f194d6727f39cb4eb27a1d1eef4120b, type: 3}
-  - {fileID: 8300000, guid: 52b1197288ad2a447934d7a656cc59c9, type: 3}
+  - {fileID: 8300000, guid: 639eab07ded1ed54ab94cfea8319c942, type: 3}
+  - {fileID: 8300000, guid: 45170b5cf0cd6d848bcc94f97bf0d9ce, type: 3}
+  - {fileID: 8300000, guid: 565fa645ab9c9ff4b9b85df9b923a224, type: 3}
+  - {fileID: 8300000, guid: 9ac43706a8f23814db2e3d8d2c7315dc, type: 3}
   volume:
-    minValue: 0.6888889
-    maxValue: 0.8888889
+    minValue: 0.5222222
+    maxValue: 0.7222222
   pitch:
-    minValue: 1.2083334
-    maxValue: 1.2083334
+    minValue: 1.4452379
+    maxValue: 1.5416667
   time: 0
   loop: 0
   mixer: {fileID: 243564214219198130, guid: 5927d8f3f31623a4fb68f3aadc6a523d, type: 2}
