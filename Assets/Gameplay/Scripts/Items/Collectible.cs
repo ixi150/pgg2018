@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using Xunity.ScriptableReferences;
 using Xunity.ScriptableVariables;
@@ -17,9 +18,22 @@ public class Collectible : MonoBehaviour, ICollectible
 
     private CollectibleManager manager;
 
+    protected void Awake()
+    {
+        GetComponentInChildren<Collider>().enabled = false;
+    }
+
+    protected IEnumerator Start()
+    {
+        yield return new WaitForSeconds(0.2f);
+
+        GetComponentInChildren<Collider>().enabled = true;
+    }
+
     public void init(CollectibleManager manager)
     {
         this.manager = manager;
+        GetComponentInChildren<Collider>().enabled = true;
     }
 
     public void OnEat()
