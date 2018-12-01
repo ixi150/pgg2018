@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4586387512047172}
-  - component: {fileID: 136834761404024882}
+  - component: {fileID: 65519255156283704}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -117,7 +117,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1367446778468992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0.85}
+  m_LocalPosition: {x: 0, y: -0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4686519606263032}
@@ -250,6 +250,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65519255156283704
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1367446778468992}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65886801721808830
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -308,7 +320,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 11400000, guid: 3882a5c048a514e4a8ae252dcd98e074, type: 2}
   joystickNames: []
-  eaten: []
+  eaten: 
+  collider: {fileID: 65519255156283704}
 --- !u!114 &114637461248355828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -322,16 +335,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speedMultiplier: 3
   _rotationMultiplier: 100
---- !u!136 &136834761404024882
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1367446778468992}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0}

@@ -179,6 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedMultiplier: 3
+  _rotationMultiplier: 0
 --- !u!114 &68174658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 11400000, guid: 02f1721f2eba7de42b6d94e47d2906b7, type: 2}
   joystickNames: []
-  eaten: []
+  eaten: 
   collider: {fileID: 1588396715}
 --- !u!54 &68174659
 Rigidbody:
@@ -320,6 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedMultiplier: 3
+  _rotationMultiplier: 0
 --- !u!114 &217153642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,7 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 11400000, guid: 3882a5c048a514e4a8ae252dcd98e074, type: 2}
   joystickNames: []
-  eaten: []
+  eaten: 
   collider: {fileID: 438616039}
 --- !u!1 &438616038
 GameObject:
@@ -1136,7 +1138,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1727058755}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1053320985}
