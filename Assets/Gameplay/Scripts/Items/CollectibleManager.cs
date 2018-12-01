@@ -33,6 +33,7 @@ public class CollectibleManager : MonoBehaviour
     {
         var item = Instantiate(collectiblePrefab, transform.position, Quaternion.identity).GetComponent<Collectible>();
         item.init(this);
+        item.GetComponent<Animator>().Play("Spawn");
         _item = item;
     }
 }
