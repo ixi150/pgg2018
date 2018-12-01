@@ -43,7 +43,6 @@ public class Player : MonoBehaviour
         var items = Physics.OverlapBox(collider.transform.position, collider.size);
         for (int i = 0; i < items.Length; i++)
         {
-            Debug.Log(items[i].name);
             var collectiblle = items[i].GetComponent<Collectible>();
             if (collectiblle)
             {
