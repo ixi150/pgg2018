@@ -9,6 +9,10 @@ public class FartExtension : PlayerExtension
 
     public override void OnSecondaryInputUp()
     {
-        OnStateChanged(PlayerState.ReleaseFart);
+        if (_baseScript.eaten.Count > 0)
+        {
+            OnStateChanged(PlayerState.ReleaseFart);
+            _baseScript.RemoveLastEaten();
+        }
     }
 }

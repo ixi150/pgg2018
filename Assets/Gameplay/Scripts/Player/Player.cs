@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GamepadInput;
@@ -12,17 +13,22 @@ public class Player : MonoBehaviour
 
     public new BoxCollider collider;
 
+    bool _blockInput;
+
     private void Update()
     {
-        Vector2 axis = GamePad.GetAxis(GamePad.Axis.LeftStick, input.player);
-        if (axis != Vector2.zero)
-            OnMoveInput(axis);
-        if (GamePad.GetButtonDown(GamePad.Button.A, input.player))
-            OnPrimaryInput();
-        if (GamePad.GetButtonDown(GamePad.Button.B, input.player))
-            OnSecondaryInputDown();
-        if (GamePad.GetButtonUp(GamePad.Button.B, input.player))
-            OnSecondaryInputUp();
+        if (_blockInput == false)
+        {
+            Vector2 axis = GamePad.GetAxis(GamePad.Axis.LeftStick, input.player);
+            if (axis != Vector2.zero)
+                OnMoveInput(axis);
+            if (GamePad.GetButtonDown(GamePad.Button.A, input.player))
+                OnPrimaryInput();
+            if (GamePad.GetButtonDown(GamePad.Button.B, input.player))
+                OnSecondaryInputDown();
+            if (GamePad.GetButtonUp(GamePad.Button.B, input.player))
+                OnSecondaryInputUp();
+        }
 
         joystickNames = Input.GetJoystickNames();
     }
@@ -47,6 +53,12 @@ public class Player : MonoBehaviour
             if (collectiblle)
             {
                 eat(collectiblle);
+            }
+
+            var player = items[i].GetComponentInParent<Player>();
+            if (player && player != this)
+            {
+                player.GetBitten();
             }
         }
     }
@@ -81,5 +93,18 @@ public class Player : MonoBehaviour
     public void RemoveLastEaten()
     {
         eaten.RemoveAt(eaten.Count - 1);
+    }
+
+    public void GetBitten()
+    {
+        if (_blockInput == true) return;
+        _blockInput = true;
+        StartCoroutine(BlockInput());
+    }
+
+    IEnumerator BlockInput()
+    {
+        yield return new WaitForSeconds(2);
+        _blockInput = false;
     }
 }
