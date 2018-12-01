@@ -672,6 +672,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 694446450}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &694446452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114473637010720942, guid: c3d2c1dec42aeff40bb628b900da7506,
+    type: 2}
+  m_PrefabInternal: {fileID: 694446450}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!65 &718974629 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 65886801721808830, guid: d9489b03a7095654992092b844f2822c,
@@ -817,9 +823,10 @@ MonoBehaviour:
   currentTimer: {fileID: 11400000, guid: 5e2910ee26a5a634b9b71583c7d37506, type: 2}
   maxTimer: {fileID: 11400000, guid: 83a655e422c6d684897c1877d1912f91, type: 2}
   timerUI: {fileID: 694446451}
+  staphObject: {fileID: 998441318}
   itemIcon: {fileID: 1132952894}
   icons: []
-  dev_item: {fileID: 0}
+  dev_item: {fileID: 694446452}
   biteTimeOffset: {fileID: 11400000, guid: 05084823b1d0a05449b1f482acbead62, type: 2}
   staphTime: {fileID: 11400000, guid: a0e65bb096c244e41bb0316ffa2e0728, type: 2}
   maxBitePerTimeOffset: {fileID: 11400000, guid: 5a049efca10fd834c8afe749e3accb8c,
@@ -830,12 +837,31 @@ MonoBehaviour:
     maxValue: 30
   bonusTime: {fileID: 11400000, guid: c7d8201f9f8293744ae94be09b6e8b62, type: 2}
   requestedMultiplier: {fileID: 0}
-  CollectibleTypes: []
+  CollectibleTypes:
+  - {fileID: 11400000, guid: 4cc30c51ae6288a4881c65ed059a0743, type: 2}
+  - {fileID: 11400000, guid: 326bcab1b99f8f74a80137f9ac16f3db, type: 2}
+  - {fileID: 11400000, guid: 78e29b5433d2eef4ebabdf5c76a57275, type: 2}
   playerPoints:
   - {fileID: 11400000, guid: bbaa4419a1b02af468962ca5eb8a18f0, type: 2}
   - {fileID: 11400000, guid: 5782593a4e1245b458128577cc2b3f60, type: 2}
   - {fileID: 11400000, guid: e1b99e9cd5989214e8c5b6076eb7c99a, type: 2}
   - {fileID: 11400000, guid: 284b24121ae0a1b4f9ea95464faaee85, type: 2}
+--- !u!1 &998441318 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1896575843735926, guid: c3d2c1dec42aeff40bb628b900da7506,
+    type: 2}
+  m_PrefabInternal: {fileID: 694446450}
+--- !u!114 &998441319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 998441318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f9a00b4177186a40b4f072a0158264c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1132952894 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114300690472090204, guid: c3d2c1dec42aeff40bb628b900da7506,

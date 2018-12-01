@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public FloatVariable currentTimer, maxTimer;
     public Text timerUI;
 
+    public GameObject staphObject;
+
     public Image itemIcon;
     public Sprite[] icons;
     public Text dev_item;
@@ -29,6 +31,8 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
 
+    public bool StaphActive { get; private set; }
+
     CollectibleType _currentBonus;
     bool _blinking;
 
@@ -39,6 +43,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        staphObject.SetActive(false);
         _currentBonus = null;
         StartCoroutine(ItemCollectorManager());
         dev_item.enabled = false;
@@ -133,6 +138,8 @@ public class GameManager : MonoBehaviour
 
     public void OnPlayerBite()
     {
+        if (StaphActive) return;
+
         bites.Add(Time.realtimeSinceStartup);
 
         if (bites.Count > 1)
@@ -140,6 +147,7 @@ public class GameManager : MonoBehaviour
             if (bites[bites.Count - 1] - bites[0] < biteTimeOffset && bites.Count > maxBitePerTimeOffset)
             {
                 bites.Clear();
+                StartCoroutine(WaitForStaphEnd());
                 return;
             }
 
@@ -149,6 +157,15 @@ public class GameManager : MonoBehaviour
                     bites.RemoveAt(i);
             }
         }
+    }
+
+    IEnumerator WaitForStaphEnd()
+    {
+        staphObject.SetActive(true);
+        StaphActive = true;
+        yield return new WaitForSeconds(staphTime);
+        staphObject.SetActive(false);
+        StaphActive = false;
     }
 
     private void OnGUI()
