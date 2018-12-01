@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 54593884946938172}
   - component: {fileID: 114514375840059164}
   - component: {fileID: 114647778031474068}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Shot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 33195425496827306}
   - component: {fileID: 23867441302387098}
   - component: {fileID: 135420430940438546}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
