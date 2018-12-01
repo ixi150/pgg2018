@@ -1,15 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 using Xunity.ScriptableVariables;
 
 public class FartShoot : MonoBehaviour, ICollectible
 {
-    public CollectibleType Type { get { return _collectibleType; } }
-
-    [SerializeField]
-    private CollectibleType _collectibleType;
+    public CollectibleType Type { get; set; }
 
     public FloatVariable forceMultiplier;
     public FloatVariable _timeToDestroy;
@@ -20,6 +18,7 @@ public class FartShoot : MonoBehaviour, ICollectible
 
     public void Init(Player owner, Vector3 force, bool destroyAfterTime = true)
     {
+        Type = owner.eaten.LastOrDefault();
         _destroyAfterTime = destroyAfterTime;
         if (_destroyAfterTime)
         {

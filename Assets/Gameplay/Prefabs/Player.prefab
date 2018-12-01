@@ -1058,10 +1058,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b567b935f56c7974c9d83190eac771aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: {fileID: 11400000, guid: 3882a5c048a514e4a8ae252dcd98e074, type: 2}
+  points: {fileID: 0}
+  input: {fileID: 0}
   joystickNames: []
-  eaten: 
-  collider: {fileID: 65519255156283704}
+  throwUpOffset: 1
+  minThrowUpPower: {x: -250, y: 250, z: -250}
+  maxThrowUpPower: {x: 250, y: 500, z: 250}
+  eaten: []
+  collider: {fileID: 65886801721808830}
 --- !u!114 &114637461248355828
 MonoBehaviour:
   m_ObjectHideFlags: 1

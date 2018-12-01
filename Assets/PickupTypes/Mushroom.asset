@@ -11,6 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd75a1b08a35d374292de4e65f9d03bd, type: 3}
   m_Name: Mushroom
   m_EditorClassIdentifier: 
+  Prefab: {fileID: 114320424383426542, guid: f2ff8e87c7fe0ce4b8946bcf7380b286, type: 2}
+  View: {fileID: 1299746928866632, guid: 7e86621db39117e4eb66d318b1018d32, type: 2}
+  Image: {fileID: 0}
   minSpawnTime:
     reference: {fileID: 0}
     value: 4
