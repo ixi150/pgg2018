@@ -4,8 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using GamepadInput;
 
+using Xunity.ScriptableVariables;
+
 public class Player : MonoBehaviour
 {
+    public FloatVariable points;
     public PlayerInput input;
     public string[] joystickNames;
 
@@ -105,7 +108,7 @@ public class Player : MonoBehaviour
     {
         if (_blockInput == true) return;
 
-        if(_blockInputCoroutine != null) StopCoroutine(_blockInputCoroutine);
+        if (_blockInputCoroutine != null) StopCoroutine(_blockInputCoroutine);
         _blockInputCoroutine = StartCoroutine(BlockInput());
     }
 

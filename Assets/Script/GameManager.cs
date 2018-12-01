@@ -37,6 +37,11 @@ public class GameManager : MonoBehaviour
         dev_item.enabled = false;
 
         currentTimer.Set(maxTimer);
+
+        for (int i = 0; i < playerPoints.Length; i++)
+        {
+            playerPoints[i].Set(0);
+        }
     }
 
     IEnumerator ItemCollectorManager()
@@ -56,6 +61,7 @@ public class GameManager : MonoBehaviour
             {
                 time = bonusTime;
                 _currentBonus = (CollectibleType)Random.Range(1, System.Enum.GetNames(typeof(CollectibleType)).Length);
+                dev_item.text = _currentBonus.ToString();
                 dev_item.enabled = true;
                 yield return new WaitForSeconds(time - 3);
                 _blinking = true;
@@ -66,7 +72,6 @@ public class GameManager : MonoBehaviour
                 time = GetRandomTime();
                 _currentBonus = CollectibleType.none;
                 dev_item.enabled = false;
-                dev_item.text = _currentBonus.ToString();
                 yield return new WaitForSeconds(time);
             }
         }
@@ -85,9 +90,7 @@ public class GameManager : MonoBehaviour
         timerUI.text = Mathf.FloorToInt(currentTimer).ToString();
     }
 
-
-
-    public int[] playerPoints = new int[4];
+    public FloatVariable[] playerPoints = new FloatVariable[4];
 
     public void AddPoints(GamePad.Index player, CollectibleType[] collectable)
     {
@@ -97,7 +100,7 @@ public class GameManager : MonoBehaviour
             points += collectable[i] == _currentBonus ? 3 : 1;
         }
 
-        playerPoints[(int)player] += points;
+        playerPoints[(int)player - 1].Set(playerPoints[(int)player - 1] + points);
     }
 
     public float GetRandomTime()
