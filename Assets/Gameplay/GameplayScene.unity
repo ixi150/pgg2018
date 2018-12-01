@@ -583,18 +583,92 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224572424785843194, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224572424785843194, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224572424785843194, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224572424785843194, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224459711002794174, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224459711002794174, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224459711002794174, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224459711002794174, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224153358932327470, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224153358932327470, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224153358932327470, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224153358932327470, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224513275935685174, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224513275935685174, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224513275935685174, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224513275935685174, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3d2c1dec42aeff40bb628b900da7506, type: 2}
   m_IsPrefabAsset: 0
 --- !u!114 &694446451 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114414196405794006, guid: c3d2c1dec42aeff40bb628b900da7506,
-    type: 2}
-  m_PrefabInternal: {fileID: 694446450}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!114 &694446452 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114473637010720942, guid: c3d2c1dec42aeff40bb628b900da7506,
     type: 2}
   m_PrefabInternal: {fileID: 694446450}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -745,16 +819,18 @@ MonoBehaviour:
   timerUI: {fileID: 694446451}
   itemIcon: {fileID: 1132952894}
   icons: []
-  dev_item: {fileID: 694446452}
+  dev_item: {fileID: 0}
+  biteTimeOffset: {fileID: 11400000, guid: 05084823b1d0a05449b1f482acbead62, type: 2}
+  staphTime: {fileID: 11400000, guid: a0e65bb096c244e41bb0316ffa2e0728, type: 2}
+  maxBitePerTimeOffset: {fileID: 11400000, guid: 5a049efca10fd834c8afe749e3accb8c,
+    type: 2}
+  bites: []
   timeToNextBonus:
     minValue: 20
     maxValue: 30
   bonusTime: {fileID: 11400000, guid: c7d8201f9f8293744ae94be09b6e8b62, type: 2}
   requestedMultiplier: {fileID: 0}
-  CollectibleTypes:
-  - {fileID: 11400000, guid: 4cc30c51ae6288a4881c65ed059a0743, type: 2}
-  - {fileID: 11400000, guid: 326bcab1b99f8f74a80137f9ac16f3db, type: 2}
-  - {fileID: 11400000, guid: 78e29b5433d2eef4ebabdf5c76a57275, type: 2}
+  CollectibleTypes: []
   playerPoints:
   - {fileID: 11400000, guid: bbaa4419a1b02af468962ca5eb8a18f0, type: 2}
   - {fileID: 11400000, guid: 5782593a4e1245b458128577cc2b3f60, type: 2}

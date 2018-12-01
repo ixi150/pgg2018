@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
             var player = objects[i].GetComponentInParent<Player>();
             if (player && player != this)
             {
+                GameManager.Instance.OnPlayerBite();
                 player.StunPlayer();
             }
         }

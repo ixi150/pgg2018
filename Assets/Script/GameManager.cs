@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour
     public Sprite[] icons;
     public Text dev_item;
 
+    public FloatVariable biteTimeOffset;
+    public FloatVariable staphTime;
+    public IntVariable maxBitePerTimeOffset;
+    public List<float> bites;
 
     [MinMaxRange(20, 30)]
     public RangedFloat timeToNextBonus;
@@ -125,6 +129,26 @@ public class GameManager : MonoBehaviour
     public float GetRandomTime()
     {
         return Random.Range(timeToNextBonus.minValue, timeToNextBonus.maxValue);
+    }
+
+    public void OnPlayerBite()
+    {
+        bites.Add(Time.realtimeSinceStartup);
+
+        if (bites.Count > 1)
+        {
+            if (bites[bites.Count - 1] - bites[0] < biteTimeOffset && bites.Count > maxBitePerTimeOffset)
+            {
+                bites.Clear();
+                return;
+            }
+
+            for (int i = bites.Count - 1; i >= 0; i--)
+            {
+                if (Time.realtimeSinceStartup > bites[i] + biteTimeOffset)
+                    bites.RemoveAt(i);
+            }
+        }
     }
 
     private void OnGUI()
