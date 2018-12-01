@@ -18,14 +18,21 @@ public class Player : MonoBehaviour
     public Vector3 maxThrowUpPower;
     public List<CollectibleType> eaten = new List<CollectibleType>();
 
-    public new BoxCollider collider;
+    //public new BoxCollider collider;
 
+    Animator _animator;
     PlayerRuntime _playerRuntime;
     bool _blockInput;
 
     private void Awake()
     {
         _playerRuntime = GetComponent<PlayerRuntime>();
+        _animator = GetComponentInChildren<Animator>();
+    }
+
+    private void Start()
+    {
+        _playerHitBox = GetComponentInChildren<PlayerHitBox>();
     }
 
     private void Update()
@@ -49,32 +56,40 @@ public class Player : MonoBehaviour
     public event Action<Vector2> MoveInput;
     private void OnMoveInput(Vector2 axis)
     {
+        Debug.Log(Mathf.Abs(axis.magnitude));
+        _animator.SetFloat("Move", Mathf.Abs(axis.magnitude));
+
         if (MoveInput != null)
             MoveInput(axis);
     }
 
     public event Action PrimaryInput;
+
+    PlayerHitBox _playerHitBox;
     private void OnPrimaryInput()
     {
         //if (PrimaryInput != null)
         //    PrimaryInput();
 
-        var objects = Physics.OverlapBox(collider.transform.position, collider.size);
-        for (int i = 0; i < objects.Length; i++)
-        {
-            var collectiblle = objects[i].GetComponent<Collectible>();
-            if (collectiblle != null)
-            {
-                eat(collectiblle);
-            }
+        _animator.SetTrigger("Eat");
+        _playerHitBox.CleatHitBox();
 
-            var player = objects[i].GetComponentInParent<Player>();
-            if (player && player != this)
-            {
-                GameManager.Instance.OnPlayerBite();
-                player.StunPlayer();
-            }
-        }
+        //var objects = Physics.OverlapBox(collider.transform.position, collider.size);
+        //for (int i = 0; i < objects.Length; i++)
+        //{
+        //    var collectiblle = objects[i].GetComponent<Collectible>();
+        //    if (collectiblle != null)
+        //    {
+        //        eat(collectiblle);
+        //    }
+
+        //    var player = objects[i].GetComponentInParent<Player>();
+        //    if (player && player != this)
+        //    {
+        //        GameManager.Instance.OnPlayerBite();
+        //        player.StunPlayer();
+        //    }
+        //}
     }
 
     public void ThrowUp()
@@ -131,7 +146,7 @@ public class Player : MonoBehaviour
         eaten.Clear();
         return collectibles;
     }
-    
+
 
     public void RemoveLastEaten()
     {
