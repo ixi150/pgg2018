@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
         if (input.GetShootButton()) Debug.Log("Shoot");
         if (input.GetShootButtonDown()) Debug.Log("Shoot Down");
         if (input.GetShootButtonUp()) Debug.Log("Shoot Up");
-
+         
         joystickNames = Input.GetJoystickNames();
     }
 }
