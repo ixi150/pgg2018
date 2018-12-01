@@ -44,6 +44,7 @@ public class PlayerHitBox : MonoBehaviour
 
             GameManager.Instance.OnPlayerBite();
             player.StunPlayer();
+            player.ThrowUp();
         }
     }
 }

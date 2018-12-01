@@ -167,12 +167,4 @@ public class GameManager : MonoBehaviour
         staphObject.SetActive(false);
         StaphActive = false;
     }
-
-    private void OnGUI()
-    {
-        for (int i = 0; i < playerPoints.Length; i++)
-        {
-            GUI.Label(new Rect(50, 25 + i * 25, 200, 25), "Player " + (i + 1) + ": " + playerPoints[i]);
-        }
-    }
 }
