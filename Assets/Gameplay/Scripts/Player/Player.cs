@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
         var objects = Physics.OverlapBox(collider.transform.position, collider.size);
         for (int i = 0; i < objects.Length; i++)
         {
-            var collectiblle = objects[i].GetComponent<ICollectible>();
+            var collectiblle = objects[i].GetComponent<Collectible>();
             if (collectiblle != null)
             {
                 eat(collectiblle);
@@ -86,9 +86,9 @@ public class Player : MonoBehaviour
             SecondaryInputUp();
     }
 
-    public void eat(ICollectible collectible)
+    public void eat(Collectible collectible)
     {
-        eaten.Add(collectible.CollectibleType);
+        eaten.Add(collectible.Type);
         collectible.OnEat();
     }
 

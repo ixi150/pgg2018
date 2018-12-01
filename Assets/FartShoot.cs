@@ -6,7 +6,7 @@ using Xunity.ScriptableVariables;
 
 public class FartShoot : MonoBehaviour, ICollectible
 {
-    public CollectibleType CollectibleType { get { return _collectibleType; } }
+    public CollectibleType Type { get { return _collectibleType; } }
 
     [SerializeField]
     private CollectibleType _collectibleType;

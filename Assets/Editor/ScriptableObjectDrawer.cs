@@ -42,7 +42,7 @@ public class ScriptableObjectDrawer : PropertyDrawer
         var type = property.serializedObject.targetObject.GetType().GetField(property.isArray ? property.arrayElementType : fieldPath, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance).FieldType;
         if (type.IsArray) type = type.GetElementType();
         else if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>)) type = type.GetGenericArguments()[0];
-        var types = AppDomain.CurrentDomain.GetAssemblies().SelectMany(e => e.GetExportedTypes()).Where(e => !e.IsAbstract && type.IsAssignableFrom(e));
+        var types = AppDomain.CurrentDomain.GetAssemblies().SelectMany(e => e.GetTypes()).Where(e => !e.IsAbstract && type.IsAssignableFrom(e));
         var selected = EditorGUI.Popup(popupRect, -1, types.Select(e => e.Name).ToArray());
         if (selected >= 0)
         {
