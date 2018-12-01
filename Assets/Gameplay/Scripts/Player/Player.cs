@@ -13,7 +13,13 @@ public class Player : MonoBehaviour
 
     public new BoxCollider collider;
 
+    PlayerRuntime _playerRuntime;
     bool _blockInput;
+
+    private void Awake()
+    {
+        _playerRuntime = GetComponent<PlayerRuntime>();
+    }
 
     private void Update()
     {
@@ -49,8 +55,8 @@ public class Player : MonoBehaviour
         var objects = Physics.OverlapBox(collider.transform.position, collider.size);
         for (int i = 0; i < objects.Length; i++)
         {
-            var collectiblle = objects[i].GetComponent<Collectible>();
-            if (collectiblle)
+            var collectiblle = objects[i].GetComponent<ICollectible>();
+            if (collectiblle != null)
             {
                 eat(collectiblle);
             }
@@ -77,7 +83,7 @@ public class Player : MonoBehaviour
             SecondaryInputUp();
     }
 
-    public void eat(Collectible collectible)
+    public void eat(ICollectible collectible)
     {
         eaten.Add(collectible.CollectibleType);
         collectible.OnEat();
@@ -98,13 +104,17 @@ public class Player : MonoBehaviour
     public void StunPlayer()
     {
         if (_blockInput == true) return;
-        _blockInput = true;
-        StartCoroutine(BlockInput());
+
+        if(_blockInputCoroutine != null) StopCoroutine(_blockInputCoroutine);
+        _blockInputCoroutine = StartCoroutine(BlockInput());
     }
 
+    private Coroutine _blockInputCoroutine;
     IEnumerator BlockInput()
     {
+        _blockInput = true;
         yield return new WaitForSeconds(2);
         _blockInput = false;
+        _blockInputCoroutine = null;
     }
 }
