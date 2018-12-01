@@ -8,6 +8,9 @@ using Xunity.ScriptableVariables;
 
 public class GameManager : MonoBehaviour
 {
+    public FloatVariable currentTimer, maxTimer;
+    public Text timerUI;
+
     public Image itemIcon;
     public Sprite[] icons;
 
@@ -31,7 +34,9 @@ public class GameManager : MonoBehaviour
     {
         _currentBonus = CollectibleType.none;
         StartCoroutine(ItemCollectorManager());
-        //dev_item.enabled = false;
+        dev_item.enabled = false;
+
+        currentTimer.Set(maxTimer);
     }
 
     IEnumerator ItemCollectorManager()
@@ -75,7 +80,12 @@ public class GameManager : MonoBehaviour
             color.a = Mathf.PingPong(Time.time * 2, 0.8f) + 0.2f;
             dev_item.color = color;
         }
+
+        currentTimer.Set(currentTimer - Time.deltaTime);
+        timerUI.text = Mathf.FloorToInt(currentTimer).ToString();
     }
+
+
 
     public int[] playerPoints = new int[4];
 

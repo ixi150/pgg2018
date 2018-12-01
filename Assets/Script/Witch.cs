@@ -12,5 +12,4 @@ public class Witch : MonoBehaviour
             GameManager.Instance.AddPoints(player.input.player, player.GetAllEaten());
         }
     }
-
 }
