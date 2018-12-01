@@ -21,17 +21,21 @@ public class PlayerRuntime : MonoBehaviour
     private Rigidbody rigid;
     private Vector3 _lastMoveDirection;
 
+    Player _player;
+
     private void Awake()
     {
         _shotParent = GameObject.Find("[BULLET_PARENT]").transform;
         _lastMoveDirection = transform.forward;
         _playerState = PlayerState.Idle;
         rigid = GetComponent<Rigidbody>();
+
+        _player = GetComponent<Player>();
     }
 
     private void Update()
     {
-        transform.rotation = Quaternion.Lerp(transform.rotation, 
+        transform.rotation = Quaternion.Lerp(transform.rotation,
             Quaternion.LookRotation(_lastMoveDirection, Vector3.up),
             _rotationMultiplier * Time.deltaTime);
     }
@@ -65,6 +69,7 @@ public class PlayerRuntime : MonoBehaviour
     private void ShotFromAss()
     {
         Transform obj = Instantiate(_shotPrefab, _playerAss.position, _playerAss.rotation);
+        obj.GetComponent<FartShoot>().Init(_player, -transform.forward);
         obj.parent = _shotParent;
     }
 

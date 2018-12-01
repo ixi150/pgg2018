@@ -46,19 +46,19 @@ public class Player : MonoBehaviour
         //if (PrimaryInput != null)
         //    PrimaryInput();
 
-        var items = Physics.OverlapBox(collider.transform.position, collider.size);
-        for (int i = 0; i < items.Length; i++)
+        var objects = Physics.OverlapBox(collider.transform.position, collider.size);
+        for (int i = 0; i < objects.Length; i++)
         {
-            var collectiblle = items[i].GetComponent<Collectible>();
+            var collectiblle = objects[i].GetComponent<Collectible>();
             if (collectiblle)
             {
                 eat(collectiblle);
             }
 
-            var player = items[i].GetComponentInParent<Player>();
+            var player = objects[i].GetComponentInParent<Player>();
             if (player && player != this)
             {
-                player.GetBitten();
+                player.StunPlayer();
             }
         }
     }
@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
         eaten.RemoveAt(eaten.Count - 1);
     }
 
-    public void GetBitten()
+    public void StunPlayer()
     {
         if (_blockInput == true) return;
         _blockInput = true;

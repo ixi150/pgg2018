@@ -205,7 +205,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 330764874}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalPosition: {x: 13.21, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2087864637}
@@ -427,6 +427,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec259050b10c5439b5f30f29b5fad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minSpawnTimme: {fileID: 11400000, guid: 1afa025c4acbf2f449cbb2d76a1f5fb3, type: 2}
+  maxSpawnTime: {fileID: 11400000, guid: bf15ff0e74512ef43945b6da69537707, type: 2}
+  maxItems: {fileID: 11400000, guid: 1ad40be0e2ddb034791fc759d69f9600, type: 2}
   collectiblePrefab: {fileID: 1883693521989156, guid: c4dc9a7dd52e9c248bf73ed512a9ce8d,
     type: 2}
 --- !u!1001 &693888093
@@ -767,6 +770,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec259050b10c5439b5f30f29b5fad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minSpawnTimme: {fileID: 11400000, guid: 1afa025c4acbf2f449cbb2d76a1f5fb3, type: 2}
+  maxSpawnTime: {fileID: 11400000, guid: bf15ff0e74512ef43945b6da69537707, type: 2}
+  maxItems: {fileID: 11400000, guid: 1ad40be0e2ddb034791fc759d69f9600, type: 2}
   collectiblePrefab: {fileID: 1186053228784620, guid: f5575a71c7f0c0947a124bb1127cefdb,
     type: 2}
 --- !u!1 &1691005445
@@ -792,7 +798,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1691005445}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10, y: 0, z: 0}
+  m_LocalPosition: {x: -13.22, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2087864637}
@@ -922,6 +928,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec259050b10c5439b5f30f29b5fad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minSpawnTimme: {fileID: 11400000, guid: 1afa025c4acbf2f449cbb2d76a1f5fb3, type: 2}
+  maxSpawnTime: {fileID: 11400000, guid: bf15ff0e74512ef43945b6da69537707, type: 2}
+  maxItems: {fileID: 11400000, guid: 1ad40be0e2ddb034791fc759d69f9600, type: 2}
   collectiblePrefab: {fileID: 1041448211697168, guid: f2ff8e87c7fe0ce4b8946bcf7380b286,
     type: 2}
 --- !u!1 &2087864636

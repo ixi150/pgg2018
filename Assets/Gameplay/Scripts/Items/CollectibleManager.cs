@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using Xunity.ScriptableVariables;
+
 public class CollectibleManager : MonoBehaviour
 {
+    public FloatVariable minSpawnTimme, maxSpawnTime;
+    public IntVariable maxItems;
+
     public GameObject collectiblePrefab;
 
     private Collectible _item;
 
     private void Start()
-    {
+    {        
         SpawnItem();
     }
 
@@ -20,7 +25,7 @@ public class CollectibleManager : MonoBehaviour
 
     IEnumerator Spawn()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(Random.Range(minSpawnTimme, maxSpawnTime));
         SpawnItem();
     }
 

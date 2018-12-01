@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedMultiplier: 3
-  _rotationMultiplier: 100
+  _rotationMultiplier: 50
   _playerAss: {fileID: 4914502060938250}
   _shotPrefab: {fileID: 4697916326484360, guid: e21cc758c4688b340b3c951a795eebe6,
     type: 2}
