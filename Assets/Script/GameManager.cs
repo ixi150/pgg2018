@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
 
     public Image itemIcon;
     public Sprite[] icons;
-
     public Text dev_item;
+
 
     [MinMaxRange(20, 30)]
     public RangedFloat timeToNextBonus;
@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
         _currentBonus = CollectibleType.none;
         StartCoroutine(ItemCollectorManager());
         dev_item.enabled = false;
+        if (itemIcon) itemIcon.enabled = false;
 
         currentTimer.Set(maxTimer);
 
@@ -53,9 +54,13 @@ public class GameManager : MonoBehaviour
             _blinking = false;
             float time = 0;
 
-            var color = dev_item.color;
-            color.a = 1;
-            dev_item.color = color;
+            if (itemIcon)
+            {
+                var color = itemIcon.color;
+                color.a = 1;
+                dev_item.color = color;
+                itemIcon.color = color;
+            }
 
             if (_currentBonus == CollectibleType.none)
             {
@@ -63,6 +68,7 @@ public class GameManager : MonoBehaviour
                 _currentBonus = (CollectibleType)Random.Range(1, System.Enum.GetNames(typeof(CollectibleType)).Length);
                 dev_item.text = _currentBonus.ToString();
                 dev_item.enabled = true;
+                if (itemIcon) itemIcon.enabled = true;
                 yield return new WaitForSeconds(time - 3);
                 _blinking = true;
                 yield return new WaitForSeconds(3);
@@ -72,6 +78,7 @@ public class GameManager : MonoBehaviour
                 time = GetRandomTime();
                 _currentBonus = CollectibleType.none;
                 dev_item.enabled = false;
+                if (itemIcon) itemIcon.enabled = false;
                 yield return new WaitForSeconds(time);
             }
         }
@@ -79,15 +86,21 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (_blinking)
+        if (_blinking && itemIcon)
         {
-            var color = dev_item.color;
+            var color = itemIcon.color;
             color.a = Mathf.PingPong(Time.time * 2, 0.8f) + 0.2f;
             dev_item.color = color;
+            itemIcon.color = color;
         }
 
         currentTimer.Set(currentTimer - Time.deltaTime);
         timerUI.text = Mathf.FloorToInt(currentTimer).ToString();
+
+        if (currentTimer <= 0)
+        {
+            Debug.Log("GAME END");
+        }
     }
 
     public FloatVariable[] playerPoints = new FloatVariable[4];
