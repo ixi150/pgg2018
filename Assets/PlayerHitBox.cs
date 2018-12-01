@@ -36,6 +36,12 @@ public class PlayerHitBox : MonoBehaviour
         var player = other.GetComponentInParent<Player>();
         if (player && player != _owner)
         {
+            if (GameManager.Instance.StaphActive)
+            {
+                _owner.ThrowUpAll();
+                _owner.StunPlayer();
+            }
+
             GameManager.Instance.OnPlayerBite();
             player.StunPlayer();
         }

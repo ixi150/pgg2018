@@ -40,8 +40,8 @@ public class Player : MonoBehaviour
         if (_blockInput == false)
         {
             Vector2 axis = GamePad.GetAxis(GamePad.Axis.LeftStick, input.player);
-            if (axis != Vector2.zero)
-                OnMoveInput(axis);
+            OnMoveInput(axis);
+
             if (GamePad.GetButtonDown(GamePad.Button.A, input.player))
                 OnPrimaryInput();
             if (GamePad.GetButtonDown(GamePad.Button.B, input.player))
@@ -56,8 +56,9 @@ public class Player : MonoBehaviour
     public event Action<Vector2> MoveInput;
     private void OnMoveInput(Vector2 axis)
     {
-        Debug.Log(Mathf.Abs(axis.magnitude));
         _animator.SetFloat("Move", Mathf.Abs(axis.magnitude));
+
+        if (axis == Vector2.zero) return;
 
         if (MoveInput != null)
             MoveInput(axis);
@@ -68,28 +69,13 @@ public class Player : MonoBehaviour
     PlayerHitBox _playerHitBox;
     private void OnPrimaryInput()
     {
-        //if (PrimaryInput != null)
-        //    PrimaryInput();
-
         _animator.SetTrigger("Eat");
         _playerHitBox.CleatHitBox();
+    }
 
-        //var objects = Physics.OverlapBox(collider.transform.position, collider.size);
-        //for (int i = 0; i < objects.Length; i++)
-        //{
-        //    var collectiblle = objects[i].GetComponent<Collectible>();
-        //    if (collectiblle != null)
-        //    {
-        //        eat(collectiblle);
-        //    }
-
-        //    var player = objects[i].GetComponentInParent<Player>();
-        //    if (player && player != this)
-        //    {
-        //        GameManager.Instance.OnPlayerBite();
-        //        player.StunPlayer();
-        //    }
-        //}
+    public void ResetAttack()
+    {
+        _animator.ResetTrigger("Eat");
     }
 
     public void ThrowUp()
