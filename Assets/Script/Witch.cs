@@ -9,7 +9,7 @@ public class Witch : MonoBehaviour
         var player = other.GetComponentInParent<Player>();
         if (player)
         {
-            GameManager.Instance.AddPoints(player.input.player, player.GetAllEaten().Length);
+            GameManager.Instance.AddPoints(player.input.player, player.GetAllEaten());
         }
     }
 

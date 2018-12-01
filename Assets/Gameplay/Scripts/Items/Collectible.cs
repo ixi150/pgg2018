@@ -29,6 +29,7 @@ public class Collectible : MonoBehaviour, ICollectible
 
 public enum CollectibleType
 {
+    none,
     Mooshroom,
     Egg,
     Mandragora
