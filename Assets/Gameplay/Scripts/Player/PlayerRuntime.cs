@@ -14,6 +14,9 @@ public class PlayerRuntime : MonoBehaviour
     [SerializeField]
     private Transform _playerAss, _shotPrefab;
 
+    [SerializeField]
+    private Transform _particleLoadParent, _particleShotParent;
+
     private Transform _shotParent;
 
     private List<PlayerExtension> _extensions;
@@ -66,6 +69,18 @@ public class PlayerRuntime : MonoBehaviour
         Debug.LogWarning("PLAYER STATE CHANGED TO: " + to.ToString());
     }
 
+    private void ShowParticles(bool activate, Transform parent)
+    {
+        ParticleSystem[] effects = parent.GetComponentsInChildren<ParticleSystem>();
+        for (int i = 0; i < effects.Length; i++)
+        {
+            if (activate)
+                effects[i].Play();
+            else
+                effects[i].Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        }
+    }
+
     private void ShotFromAss()
     {
         Transform obj = Instantiate(_shotPrefab, _playerAss.position, _playerAss.rotation);
@@ -76,8 +91,16 @@ public class PlayerRuntime : MonoBehaviour
     private void OnStateChanged(PlayerState state)
     {
         DoStateTransition(_playerState, state);
+        if (state == PlayerState.StartFart)
+        {
+            ShowParticles(true, _particleLoadParent);
+        }
         if (state == PlayerState.ReleaseFart)
+        {
+            ShowParticles(false, _particleLoadParent);
+            ShowParticles(true, _particleShotParent);
             ShotFromAss();
+        }
     }
 
     private void OnMoveChanged(Vector2 axis)
