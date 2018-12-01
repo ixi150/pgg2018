@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public PlayerInput input;
     public string[] joystickNames;
 
-    public List<Collectible> eaten;
+    public List<CollectibleType> eaten;
 
     public new BoxCollider collider;
 
@@ -85,11 +85,11 @@ public class Player : MonoBehaviour
 
     public void eat(Collectible collectible)
     {
-        eaten.Add(collectible);
+        eaten.Add(collectible.Type);
         collectible.OnEat();
     }
 
-    public Collectible[] GetAllEaten()
+    public CollectibleType[] GetAllEaten()
     {
         var collectibles = eaten.ToArray();
         eaten.Clear();

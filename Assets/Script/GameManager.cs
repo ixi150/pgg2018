@@ -92,12 +92,12 @@ public class GameManager : MonoBehaviour
 
     public int[] playerPoints = new int[4];
 
-    public void AddPoints(GamePad.Index player, Collectible[] collectable)
+    public void AddPoints(GamePad.Index player, CollectibleType[] collectable)
     {
         int points = 0;
         for (int i = 0; i < collectable.Length; i++)
         {
-            points += collectable[i].Type.value * (collectable[i].Type == _currentBonus ? 3 : 1);
+            points += collectable[i].value * (collectable[i] == _currentBonus ? 3 : 1);
         }
 
         playerPoints[(int)player] += points;

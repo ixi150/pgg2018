@@ -11,6 +11,7 @@ public interface ICollectible
 
 public class Collectible : MonoBehaviour, ICollectible
 {
+    public Collectible Prefab;
     public CollectibleType Type => _type;
 
     [SerializeField] private CollectibleType _type;
