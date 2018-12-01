@@ -105,13 +105,16 @@ public class Player : MonoBehaviour
     {
         if (_blockInput == true) return;
 
-        _blockInput = true;
-        StartCoroutine(BlockInput());
+        if(_blockInputCoroutine != null) StopCoroutine(_blockInputCoroutine);
+        _blockInputCoroutine = StartCoroutine(BlockInput());
     }
 
+    private Coroutine _blockInputCoroutine;
     IEnumerator BlockInput()
     {
+        _blockInput = true;
         yield return new WaitForSeconds(2);
         _blockInput = false;
+        _blockInputCoroutine = null;
     }
 }
