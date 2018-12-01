@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 54593884946938172}
   - component: {fileID: 114514375840059164}
   - component: {fileID: 114647778031474068}
+  - component: {fileID: 114721275921486428}
   m_Layer: 14
   m_Name: Shot
   m_TagString: Untagged
@@ -80,7 +81,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1784846076342554}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -154,9 +155,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3236f23e6f3e9c1438927a7059630bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collectibleType: 0
   forceMultiplier: {fileID: 11400000, guid: 6ed995a5d260771438acb2ce088e4ec5, type: 2}
   _timeToDestroy: {fileID: 11400000, guid: 4b0cdad7420ac6c45bff4bf1d875544e, type: 2}
+--- !u!114 &114721275921486428
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1640294459669762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c67520b3aa226094dab7c2577ec3953c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135420430940438546
 SphereCollider:
   m_ObjectHideFlags: 1

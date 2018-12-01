@@ -11,6 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd75a1b08a35d374292de4e65f9d03bd, type: 3}
   m_Name: Mandragore
   m_EditorClassIdentifier: 
+  View: {fileID: 1299746928866632, guid: 7201da067c90fa147b676344699037bf, type: 2}
+  Image: {fileID: 0}
   minSpawnTime:
     reference: {fileID: 0}
     value: 2
