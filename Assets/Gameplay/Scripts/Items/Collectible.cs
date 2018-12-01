@@ -1,17 +1,19 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Xunity.ScriptableReferences;
+using Xunity.ScriptableVariables;
 
 public interface ICollectible
 {
-    CollectibleType CollectibleType { get; }
+    CollectibleType Type { get; }
     void OnEat();
 }
 
 public class Collectible : MonoBehaviour, ICollectible
 {
-    public CollectibleType CollectibleType { get { return _collectibleType; } }
+    public CollectibleType Type => _type;
 
-    [SerializeField]
-    private CollectibleType _collectibleType;
+    [SerializeField] private CollectibleType _type;
 
     private CollectibleManager manager;
 
@@ -25,12 +27,4 @@ public class Collectible : MonoBehaviour, ICollectible
         manager.SpawnNewItem();
         Destroy(gameObject);
     }
-}
-
-public enum CollectibleType
-{
-    none,
-    Mooshroom,
-    Egg,
-    Mandragora
 }

@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
     [MinMaxRange(20, 30)]
     public RangedFloat timeToNextBonus;
     public FloatVariable bonusTime;
+    public IntVariable requestedMultiplier;
+
+    public CollectibleType[] CollectibleTypes;
 
     public static GameManager Instance;
 
@@ -32,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        _currentBonus = CollectibleType.none;
+        _currentBonus = null;
         StartCoroutine(ItemCollectorManager());
         dev_item.enabled = false;
 
@@ -52,10 +55,10 @@ public class GameManager : MonoBehaviour
             color.a = 1;
             dev_item.color = color;
 
-            if (_currentBonus == CollectibleType.none)
+            if (_currentBonus == null)
             {
                 time = bonusTime;
-                _currentBonus = (CollectibleType)Random.Range(1, System.Enum.GetNames(typeof(CollectibleType)).Length);
+                _currentBonus = CollectibleTypes[Random.Range(0, CollectibleTypes.Length)];
                 dev_item.enabled = true;
                 yield return new WaitForSeconds(time - 3);
                 _blinking = true;
@@ -63,10 +66,10 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                time = GetRandomTime();
-                _currentBonus = CollectibleType.none;
+                time = Random.Range(_currentBonus.minSpawnTime, _currentBonus.maxSpawnTime);
+                _currentBonus = null;
                 dev_item.enabled = false;
-                dev_item.text = _currentBonus.ToString();
+                //dev_item.text = (_currentBonus?.value ?? 0f).ToString();
                 yield return new WaitForSeconds(time);
             }
         }
@@ -89,12 +92,12 @@ public class GameManager : MonoBehaviour
 
     public int[] playerPoints = new int[4];
 
-    public void AddPoints(GamePad.Index player, CollectibleType[] collectable)
+    public void AddPoints(GamePad.Index player, Collectible[] collectable)
     {
         int points = 0;
         for (int i = 0; i < collectable.Length; i++)
         {
-            points += collectable[i] == _currentBonus ? 3 : 1;
+            points += collectable[i].Type.value * (collectable[i].Type == _currentBonus ? 3 : 1);
         }
 
         playerPoints[(int)player] += points;

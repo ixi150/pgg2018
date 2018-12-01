@@ -6,10 +6,9 @@ using Xunity.ScriptableVariables;
 
 public class CollectibleManager : MonoBehaviour
 {
-    public FloatVariable minSpawnTimme, maxSpawnTime;
     public IntVariable maxItems;
 
-    public GameObject collectiblePrefab;
+    public Collectible collectiblePrefab;
 
     private Collectible _item;
 
@@ -25,14 +24,14 @@ public class CollectibleManager : MonoBehaviour
 
     IEnumerator Spawn()
     {
-        yield return new WaitForSeconds(Random.Range(minSpawnTimme, maxSpawnTime));
+        yield return new WaitForSeconds(Random.Range(collectiblePrefab.Type.minSpawnTime, collectiblePrefab.Type.maxSpawnTime));
         SpawnItem();
     }
 
 
     void SpawnItem()
     {
-        var item = Instantiate(collectiblePrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity).GetComponent<Collectible>();
+        var item = Instantiate(collectiblePrefab, transform.position, Quaternion.identity).GetComponent<Collectible>();
         item.init(this);
         _item = item;
     }
