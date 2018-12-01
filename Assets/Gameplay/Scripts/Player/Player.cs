@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using GamepadInput;
 
@@ -6,6 +7,8 @@ public class Player : MonoBehaviour
 {
     public PlayerInput input;
     public string[] joystickNames;
+
+    public List<Collectible> eaten;
 
     private void Update()
     {
@@ -48,5 +51,22 @@ public class Player : MonoBehaviour
     {
         if (SecondaryInputUp != null)
             SecondaryInputUp();
+    }
+
+    public void Eat(Collectible collectible)
+    {
+        eaten.Add(collectible);
+    }
+
+    public Collectible[] GetAllEaten()
+    {
+        var collectibles = eaten.ToArray();
+        eaten.Clear();
+        return collectibles;
+    }
+
+    public void RemoveLast()
+    {
+        eaten.RemoveAt(eaten.Count - 1);
     }
 }

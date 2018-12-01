@@ -6,6 +6,12 @@ public class Collectible : MonoBehaviour
 
     [SerializeField]
     private CollectibleType _collectibleType;
+
+    public void OnEat(Player player)
+    {
+        player.Eat(this);
+        Destroy(gameObject);
+    }
 }
 
 public enum CollectibleType
