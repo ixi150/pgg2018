@@ -1,6 +1,12 @@
 ﻿using UnityEngine;
 
-public class Collectible : MonoBehaviour
+public interface ICollectible
+{
+    CollectibleType CollectibleType { get; }
+    void OnEat();
+}
+
+public class Collectible : MonoBehaviour, ICollectible
 {
     public CollectibleType CollectibleType { get { return _collectibleType; } }
 
@@ -23,6 +29,7 @@ public class Collectible : MonoBehaviour
 
 public enum CollectibleType
 {
+    none,
     Mooshroom,
     Egg,
     Mandragora

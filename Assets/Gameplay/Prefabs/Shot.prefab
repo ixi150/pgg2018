@@ -154,7 +154,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3236f23e6f3e9c1438927a7059630bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collectibleType: 0
   forceMultiplier: {fileID: 11400000, guid: 6ed995a5d260771438acb2ce088e4ec5, type: 2}
+  _timeToDestroy: {fileID: 11400000, guid: 4b0cdad7420ac6c45bff4bf1d875544e, type: 2}
 --- !u!135 &135420430940438546
 SphereCollider:
   m_ObjectHideFlags: 1
