@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13a9f940313d06d4caed9863bf024ebf, type: 3}
+  m_Name: Broom hit
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: b31461344a9c57c4fba570b0d7939ed7, type: 3}
+  - {fileID: 8300000, guid: 05ba7a2e38087744f9c620d816f9296a, type: 3}
+  - {fileID: 8300000, guid: c45ec779e3679144a8fb3e1a6168fd1e, type: 3}
+  - {fileID: 8300000, guid: 8513cb204662e054fa27ff191d10e060, type: 3}
+  - {fileID: 8300000, guid: 625ba6cf52e4f7049a2ab93f64fece61, type: 3}
+  volume:
+    minValue: 0.5
+    maxValue: 0.60317457
+  pitch:
+    minValue: 1.255952
+    maxValue: 1.375
+  time: 0
+  loop: 0
+  mixer: {fileID: 243564214219198130, guid: 5927d8f3f31623a4fb68f3aadc6a523d, type: 2}
