@@ -33,12 +33,12 @@ public class PlayerHitBox : MonoBehaviour
         if (_hitObjects.Contains(other)) return;
         _hitObjects.Add(other);
 
-        Debug.Log(other.gameObject.name);
-        Debug.Log(_eatObject);
+        //Debug.Log(other.gameObject.name);
+        //Debug.Log(_eatObject);
 
         if (!_eatObject)
         {
-            Debug.Log("XXXXXX");
+            //Debug.Log("XXXXXX");
             var collectiblle = other.GetComponentInParent<ICollectible>();
             if (collectiblle != null)
             {
@@ -54,6 +54,7 @@ public class PlayerHitBox : MonoBehaviour
             {
                 _owner.ThrowUpAll();
                 _owner.StunPlayer();
+                if (GameManager.Instance.iSadstopEvent != null) GameManager.Instance.iSadstopEvent.Raise();
             }
 
             GameManager.Instance.OnPlayerBite();
