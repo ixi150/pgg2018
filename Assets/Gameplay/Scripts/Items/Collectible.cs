@@ -1,29 +1,44 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
+using Xunity.ScriptableReferences;
+using Xunity.ScriptableVariables;
 
-public class Collectible : MonoBehaviour
+public interface ICollectible
 {
-    public CollectibleType CollectibleType { get { return _collectibleType; } }
+    CollectibleType Type { get; }
+    void OnEat();
+}
 
-    [SerializeField]
-    private CollectibleType _collectibleType;
+public class Collectible : MonoBehaviour, ICollectible
+{
+    public CollectibleType Type => _type;
+
+    [SerializeField] private CollectibleType _type;
 
     private CollectibleManager manager;
+
+    protected void Awake()
+    {
+        GetComponentInChildren<Collider>().enabled = false;
+    }
+
+    protected IEnumerator Start()
+    {
+        yield return new WaitForSeconds(0.2f);
+
+        GetComponentInChildren<Collider>().enabled = true;
+    }
 
     public void init(CollectibleManager manager)
     {
         this.manager = manager;
+        GetComponentInChildren<Collider>().enabled = true;
     }
 
     public void OnEat()
     {
-        manager.SpawnNewItem();
+        if(manager) manager.SpawnNewItem();
         Destroy(gameObject);
     }
-}
-
-public enum CollectibleType
-{
-    Mooshroom,
-    Egg,
-    Mandragora
 }
