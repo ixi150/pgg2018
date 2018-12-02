@@ -148,6 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: {fileID: 11400000, guid: 4cc30c51ae6288a4881c65ed059a0743, type: 2}
+  _particlesOnDestroy: {fileID: 1436175232990352, guid: bc1663d357f9700438df7b1987697787,
+    type: 2}
 --- !u!114 &114784948195956814
 MonoBehaviour:
   m_ObjectHideFlags: 1
