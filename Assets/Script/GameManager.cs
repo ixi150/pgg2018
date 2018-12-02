@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
     public GameObject staphObject;
 
     public Image itemIcon;
-    public Sprite[] icons;
     public Text dev_item;
 
     public FloatVariable biteTimeOffset;
@@ -88,7 +87,7 @@ public class GameManager : MonoBehaviour
 
                 _currentBonus = CollectibleTypes[Random.Range(0, CollectibleTypes.Length)];
                 _currentBonus.OnIsDemandedEvent.Raise();
-                dev_item.enabled = true;
+                itemIcon.sprite = _currentBonus.Image;
                 if (itemIcon) itemIcon.enabled = true;
                 yield return new WaitForSeconds(time - 3);
                 _blinking = true;
@@ -98,7 +97,6 @@ public class GameManager : MonoBehaviour
             {
                 time = Random.Range(_currentBonus.minSpawnTime, _currentBonus.maxSpawnTime);
                 _currentBonus = null;
-                dev_item.enabled = false;
                 if (itemIcon) itemIcon.enabled = false;
                 yield return new WaitForSeconds(time);
             }
@@ -114,7 +112,6 @@ public class GameManager : MonoBehaviour
         {
             var color = itemIcon.color;
             color.a = Mathf.PingPong(Time.time * 2, 0.8f) + 0.2f;
-            dev_item.color = color;
             itemIcon.color = color;
         }
 
