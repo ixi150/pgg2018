@@ -680,6 +680,12 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: b1219669c86fd45478eded9c2a486a2c,
         type: 2}
+    - target: {fileID: 114868494117154606, guid: d9489b03a7095654992092b844f2822c,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 84c6204d96e4e1847a0239b378e69d34,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9489b03a7095654992092b844f2822c, type: 2}
   m_IsPrefabAsset: 0
@@ -2026,6 +2032,48 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 523527441}
+    - target: {fileID: 114414196405794006, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 84c6204d96e4e1847a0239b378e69d34,
+        type: 3}
+    - target: {fileID: 114968209367775678, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 84c6204d96e4e1847a0239b378e69d34,
+        type: 3}
+    - target: {fileID: 114996393129439186, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 84c6204d96e4e1847a0239b378e69d34,
+        type: 3}
+    - target: {fileID: 114603457199060466, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 84c6204d96e4e1847a0239b378e69d34,
+        type: 3}
+    - target: {fileID: 114035324320697920, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 84c6204d96e4e1847a0239b378e69d34,
+        type: 3}
+    - target: {fileID: 114473637010720942, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 84c6204d96e4e1847a0239b378e69d34,
+        type: 3}
+    - target: {fileID: 114816200431608492, guid: c3d2c1dec42aeff40bb628b900da7506,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 84c6204d96e4e1847a0239b378e69d34,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3d2c1dec42aeff40bb628b900da7506, type: 2}
   m_IsPrefabAsset: 0
@@ -2631,6 +2679,12 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: e4d7eb9a62ddf634fa911a448e25d00b,
         type: 2}
+    - target: {fileID: 114868494117154606, guid: d9489b03a7095654992092b844f2822c,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 84c6204d96e4e1847a0239b378e69d34,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9489b03a7095654992092b844f2822c, type: 2}
   m_IsPrefabAsset: 0
@@ -4027,6 +4081,16 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5096e71bf89b46e48aad2ccd4402b5f6, type: 2}
+    - target: {fileID: 114868494117154606, guid: d9489b03a7095654992092b844f2822c,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 84c6204d96e4e1847a0239b378e69d34,
+        type: 3}
+    - target: {fileID: 1786592111130496, guid: d9489b03a7095654992092b844f2822c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9489b03a7095654992092b844f2822c, type: 2}
   m_IsPrefabAsset: 0

@@ -37,15 +37,15 @@ public class GameUI : MonoBehaviour
             }
         }
 
-        if (_currentLead != pointBoards[0]._player)
+        if (_currentLead != currentFirstPlayer)
         {
-            pointBoards[0].PlayLeadVoice();
+            pointBoards[(int)_currentLead - 1].PlayLeadVoice();
         }
     }
 
     public void PLayWinSound()
     {
-        pointBoards[0].PlayWinVoice();
+        pointBoards[(int)_currentLead - 1].PlayWinVoice();
         ShowWinScreen();
         StartCoroutine(RsetGame());
     }
@@ -58,7 +58,7 @@ public class GameUI : MonoBehaviour
 
     public void ShowWinScreen()
     {
-        win.text = "Familiar " + ((int)_currentLead + 1) + " Wins!";
+        win.text = "Familiar " + ((int)_currentLead) + " Wins!";
         winScreen.SetActive(true);
     }
 }
