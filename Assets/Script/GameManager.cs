@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public FloatVariable currentTimer, maxTimer;
     public Text timerUI;
 
+    public GameUI ui;
+
     public GameObject staphObject;
 
     public Image itemIcon;
@@ -100,8 +102,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    bool _gameEnd;
     private void Update()
     {
+        if (_gameEnd) return;
+
         if (_blinking && itemIcon)
         {
             var color = itemIcon.color;
@@ -115,6 +120,8 @@ public class GameManager : MonoBehaviour
 
         if (currentTimer <= 0)
         {
+            _gameEnd = true;
+            ui.PLayWinSound();
             Debug.Log("GAME END");
         }
     }

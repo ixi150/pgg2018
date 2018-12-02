@@ -9,7 +9,7 @@ using Xunity.ScriptableVariables;
 public class CollectibleType : ScriptableObject
 {
     public Collectible Prefab;
-    public GameObject View;
+    public GameObject[] Views;
     public Sprite Image;
     public FloatReference minSpawnTime, maxSpawnTime;
     public IntReference value;

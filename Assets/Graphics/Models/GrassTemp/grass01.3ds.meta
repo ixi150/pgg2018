@@ -1,20 +1,15 @@
 fileFormatVersion: 2
-guid: 28428899b82834847b1ee2e1befd2fc7
+guid: 5665169419317714cb779ee89e4c3ea4
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: No Name
+    2100000: ac3dmat1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cylinder002
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: d9eb026ccc1361c4e82bbcbd2792fe79, type: 2}
+    4300000: grass01
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0

@@ -52,7 +52,7 @@ ModelImporter:
     4300002: hat
     4300004: teeth_down
     4300006: teeth_up
-    7400000: Take 001
+    7400000: Walk
     9500000: //RootNode
     13700000: dude
     13700002: hat
@@ -92,7 +92,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: Walk
       takeName: Take 001
       firstFrame: 1
       lastFrame: 27

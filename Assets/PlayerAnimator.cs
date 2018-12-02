@@ -15,4 +15,9 @@ public class PlayerAnimator : MonoBehaviour
     {
         _owner.ResetTriggers();
     }
+
+    public void MoveStep()
+    {
+        //_owner.PlayStepSound();
+    }
 }
