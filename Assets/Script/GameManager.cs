@@ -122,6 +122,7 @@ public class GameManager : MonoBehaviour
         {
             _gameEnd = true;
             ui.PLayWinSound();
+            timerUI.gameObject.SetActive(false);
             Debug.Log("GAME END");
         }
     }

@@ -429,25 +429,25 @@ MonoBehaviour:
     score: {fileID: 114996393129439186}
     leadEvent: {fileID: 11400000, guid: 30fe5c33e5f8d0747a07b8c7461c1b98, type: 2}
     winEvent: {fileID: 11400000, guid: 628196529b347714a8b1c381f4f09056, type: 2}
-    _player: 0
+    _player: 1
   - root: {fileID: 1958594526577482}
     points: {fileID: 11400000, guid: 5782593a4e1245b458128577cc2b3f60, type: 2}
     score: {fileID: 114968209367775678}
     leadEvent: {fileID: 11400000, guid: 6e23b132cf02b054ea7f7f9937766d4a, type: 2}
     winEvent: {fileID: 11400000, guid: 5ea3c826d686afe468a2c9b493b126b1, type: 2}
-    _player: 0
+    _player: 2
   - root: {fileID: 1688896323105030}
     points: {fileID: 11400000, guid: e1b99e9cd5989214e8c5b6076eb7c99a, type: 2}
     score: {fileID: 114035324320697920}
     leadEvent: {fileID: 11400000, guid: f1df9239114bfa84c98620f058998b60, type: 2}
     winEvent: {fileID: 11400000, guid: adbd7b90bd9c0484e966aca595260652, type: 2}
-    _player: 0
+    _player: 3
   - root: {fileID: 1084905715491246}
     points: {fileID: 11400000, guid: 284b24121ae0a1b4f9ea95464faaee85, type: 2}
     score: {fileID: 114816200431608492}
     leadEvent: {fileID: 11400000, guid: 99cd296b0844855468397078b2d60cd7, type: 2}
     winEvent: {fileID: 11400000, guid: c23fff4353db87041beae819aa3d9a12, type: 2}
-    _player: 0
+    _player: 4
   winScreen: {fileID: 1254737386192228}
   win: {fileID: 114821744655328784}
 --- !u!114 &114075391182732976
