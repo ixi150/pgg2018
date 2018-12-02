@@ -20,7 +20,12 @@ ModelImporter:
     7400000: Take 001
     9500000: //RootNode
     13700000: mushroom003
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 51a65839dc99b0740982db5d583fb75b, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -71,7 +76,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.099999994
+    previousCalculatedGlobalScale: 0.049999997
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
