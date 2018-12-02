@@ -12,33 +12,62 @@ public class Broom : MonoBehaviour
 
     private Witch _vera;
     private Player _target;
+    private Animator _animator;
+
+    public void Hit()
+    {
+        _target.StunPlayer();
+    }
 
     protected void Awake()
     {
+        _animator = GetComponentInChildren<Animator>();
         _vera = FindObjectOfType<Witch>();
     }
 
     protected void Update()
     {
         if (!_vera.InRage) Players.Clear();
-        if (_target == null && Players.Count > 0) _target = Players[0];
-        if (_target)
+        if (_target == null)
         {
-            transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, Speed * Time.deltaTime);
-            if (transform.position == _target.transform.position)
+            if (Players.Count > 0)
             {
-                _target.StunPlayer();
-                if (Players.Count > 0)
+                _animator.CrossFade("Follow", 0.1f);
+                _target = Players[0];
+                StartCoroutine(_hit(_target));
+            }
+            else if(transform.position != StartPoint.position)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, StartPoint.position, Speed * Time.deltaTime);
+                if (transform.position == StartPoint.position)
                 {
-                    Players.RemoveAt(0);
+                    _animator.CrossFadeInFixedTime("Idle", 0.25f);
                 }
-
-                _target = null;
             }
         }
-        else
+    }
+
+    private IEnumerator _hit(Player player)
+    {
+        _animator.CrossFadeInFixedTime("Follow", 0.1f);
+        while (transform.position != player.transform.position)
         {
-            transform.position = Vector3.MoveTowards(transform.position, StartPoint.position, Speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, Speed * Time.deltaTime);
+            yield return null;
         }
+        _animator.Play("Hit");
+        float time = 1;
+        while (time > 0)
+        {
+            time -= Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, Speed * Time.deltaTime);
+            yield return null;
+        }
+        _animator.Play("Return");
+        if (Players.Count > 0)
+        {
+            Players.RemoveAt(0);
+        }
+        _target = null;
     }
 }
