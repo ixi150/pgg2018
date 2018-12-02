@@ -639,7 +639,7 @@ Transform:
   - {fileID: 4174130413997466}
   m_Father: {fileID: 4522455904909668}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -4.505173, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -4.5241623, y: 0, z: 0}
 --- !u!4 &4341057276737888
 Transform:
   m_ObjectHideFlags: 1
@@ -744,7 +744,7 @@ Transform:
   - {fileID: 4206684290457754}
   m_Father: {fileID: 4970916558443154}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 1.8424861, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.8424867, y: 0, z: 0}
 --- !u!4 &4532584948301910
 Transform:
   m_ObjectHideFlags: 1
@@ -806,7 +806,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1747288905252034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4354846660442892}
@@ -840,7 +840,7 @@ Transform:
   - {fileID: 4522455904909668}
   m_Father: {fileID: 4755234791693158}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 3.7495172, y: -0.49687326, z: -0.33352837}
+  m_LocalEulerAnglesHint: {x: 3.749518, y: -0.4968734, z: -0.33352855}
 --- !u!4 &4755234791693158
 Transform:
   m_ObjectHideFlags: 1
@@ -967,7 +967,7 @@ Transform:
   - {fileID: 4529415913933086}
   m_Father: {fileID: 4522455904909668}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -4.505173, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -4.824129, y: 0, z: 0}
 --- !u!4 &4974262623613424
 Transform:
   m_ObjectHideFlags: 1
@@ -1182,6 +1182,48 @@ MonoBehaviour:
     type: 2}
   _particleLoadParent: {fileID: 4848793453887594}
   _particleShotParent: {fileID: 4341057276737888}
+  _velocityDrop:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.75
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 2
+      value: 0.6
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 3
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &114868494117154606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1326,7 +1368,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 8699470bb0030a24b8fdc766a05546f0, type: 3}
+  - {fileID: 2100000, guid: 5096e71bf89b46e48aad2ccd4402b5f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1390,7 +1432,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 8699470bb0030a24b8fdc766a05546f0, type: 3}
+  - {fileID: 2100000, guid: 5096e71bf89b46e48aad2ccd4402b5f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

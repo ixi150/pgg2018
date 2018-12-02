@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     public float throwUpOffset = 0.5f;
     public Vector3 minThrowUpPower;
     public Vector3 maxThrowUpPower;
-    
+
     public List<CollectibleType> eaten = new List<CollectibleType>();
 
     //public new BoxCollider collider;
@@ -29,6 +29,9 @@ public class Player : MonoBehaviour
     private bool _blockInput;
     public Witch Vera { get; private set; }
 
+    public Texture[] textures;
+    public Material[] materials;
+
     private void Awake()
     {
         Vera = FindObjectOfType<Witch>();
@@ -38,6 +41,11 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        for (int i = 0; i < materials.Length; i++)
+        {
+
+        }
+
         _playerHitBox = GetComponentInChildren<PlayerHitBox>();
         playerNumber.text = "P" + (int)input.player;
     }
