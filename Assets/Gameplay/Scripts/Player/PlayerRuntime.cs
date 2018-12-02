@@ -19,6 +19,9 @@ public class PlayerRuntime : MonoBehaviour
     [SerializeField]
     private Transform _particleLoadParent, _particleShotParent;
 
+    [SerializeField]
+    private AnimationCurve _velocityDrop;
+
     private Transform _shotParent;
 
     private List<PlayerExtension> _extensions;
@@ -109,7 +112,7 @@ public class PlayerRuntime : MonoBehaviour
     {
         Vector3 realAxis = new Vector3(axis.x, 0f, axis.y);
         _lastMoveDirection = realAxis;
-        rigid.MovePosition(transform.position + realAxis * _speedMultiplier * Time.deltaTime);
+        rigid.MovePosition(transform.position + realAxis * _speedMultiplier * Time.deltaTime * (_velocityDrop.Evaluate(_player.eaten.Count)));
         //Debug.LogWarning("PLAYER MOVE CHANGED TO: " + axis.ToString());
     }
 }
