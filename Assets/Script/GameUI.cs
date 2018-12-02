@@ -10,7 +10,7 @@ public class GameUI : MonoBehaviour
 {
     public PointsBoard[] pointBoards = new PointsBoard[4];
 
-    GamePad.Index _currentLead = GamePad.Index.Any;
+    GamePad.Index _currentLead = GamePad.Index.One;
 
     public GameObject winScreen;
     public Text win;
@@ -26,32 +26,41 @@ public class GameUI : MonoBehaviour
 
     public void CheckScore(PointsBoard board)
     {
-        var currentFirstPlayer = pointBoards[0]._player;
+        var currentFirstPlayer = pointBoards[(int)_currentLead - 1]._player;
 
-        for (int i = pointBoards.Length - 2; i >= 0; i--)
+        for (int i = pointBoards.Length-1; i >= 0; i--)
         {
             if (board.points > pointBoards[i].points)
             {
                 board.root.transform.SetSiblingIndex(pointBoards[i].root.transform.GetSiblingIndex());
-                if (i == 0) _currentLead = board._player;
             }
         }
 
-        if (_currentLead != pointBoards[0]._player)
+        if (board.root.transform.parent.GetChild(0) == board.root.transform)
+            _currentLead = board._player;
+
+        if (_currentLead != currentFirstPlayer)
         {
-            pointBoards[0].PlayLeadVoice();
+            pointBoards[(int)_currentLead - 1].PlayLeadVoice();
         }
     }
 
     public void PLayWinSound()
     {
-        pointBoards[0].PlayWinVoice();
+        pointBoards[(int)_currentLead - 1].PlayWinVoice();
         ShowWinScreen();
+        StartCoroutine(RsetGame());
+    }
+
+    IEnumerator RsetGame()
+    {
+        yield return new WaitForSeconds(3);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
     public void ShowWinScreen()
     {
-        win.text = "Familiar " + ((int)_currentLead + 1) + " Wins!";
+        win.text = "Familiar " + ((int)_currentLead) + " Wins!";
         winScreen.SetActive(true);
     }
 }
