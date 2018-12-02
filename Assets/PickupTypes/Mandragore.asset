@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd75a1b08a35d374292de4e65f9d03bd, type: 3}
+  m_Name: Mandragore
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 114913660828585138, guid: f5575a71c7f0c0947a124bb1127cefdb, type: 2}
+  Views:
+  - {fileID: 1299746928866632, guid: 7201da067c90fa147b676344699037bf, type: 2}
+  Image: {fileID: 21300000, guid: 241762f9f1315eb43bc9e6a52e286ce1, type: 3}
+  minSpawnTime:
+    reference: {fileID: 0}
+    value: 2
+    useConstant: 1
+  maxSpawnTime:
+    reference: {fileID: 0}
+    value: 4
+    useConstant: 1
+  value:
+    reference: {fileID: 0}
+    value: 1
+    useConstant: 1
+  GatheredSound: {fileID: 11400000, guid: 4dc9df3e19a91474da3c7bdc8875aff3, type: 2}
+  OnIsDemandedEvent: {fileID: 11400000, guid: f32ce5600485d7348bacbcb0636fbad0, type: 2}

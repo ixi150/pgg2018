@@ -15,13 +15,13 @@ TagManager:
   - 
   - PostProcessing
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - PlayerHitbox
+  - Collectable
+  - Witch
+  - Missile
+  - Cauldron
+  - CollectablePhysic
   - 
   - 
   - 
