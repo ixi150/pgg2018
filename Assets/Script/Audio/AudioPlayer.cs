@@ -4,31 +4,39 @@ using UnityEngine;
 using Xunity.ScriptableEvents;
 
 [RequireComponent(typeof(AudioSource))]
-public class AudioPlayer : MonoBehaviour
+public class AudioPlayer : GameEventListener
 {
-	[SerializeField] bool playOnEnable;
-	[SerializeField] AudioEvent audioEvent;
+    [SerializeField] bool playOnEnable;
+    [SerializeField] AudioEvent audioEvent;
 
-	AudioSource audioSource;
-	
-	public void Play()
-	{
-		audioEvent.Play(audioSource);
-	}
+    AudioSource audioSource;
 
-	void Awake()
-	{
-		audioSource = GetComponent<AudioSource>();
-	}
+    public void Play()
+    {
+        audioEvent.Play(audioSource);
+    }
 
-	void OnEnable()
-	{
-		if (playOnEnable)
-			Play();
-	}
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
-	void OnDisable()
-	{
-		audioSource.Stop();
-	}
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+
+        if (playOnEnable)
+            Play();
+    }
+
+    public override void OnEventRaised()
+    {
+        base.OnEventRaised();
+        Play();
+    }
+
+    void OnDisable()
+    {
+        audioSource.Stop();
+    }
 }
