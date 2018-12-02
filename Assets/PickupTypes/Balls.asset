@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Name: Balls
   m_EditorClassIdentifier: 
   Prefab: {fileID: 114760653987723558, guid: c4dc9a7dd52e9c248bf73ed512a9ce8d, type: 2}
-  View: {fileID: 1299746928866632, guid: f454ad084c212334dac1b4fcc26b37b1, type: 2}
+  Views:
+  - {fileID: 1299746928866632, guid: f454ad084c212334dac1b4fcc26b37b1, type: 2}
   Image: {fileID: 0}
   minSpawnTime:
     reference: {fileID: 0}
