@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8699470bb0030a24b8fdc766a05546f0
+guid: 8bbfea8acebcc44449f790229820a5f1
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -21,10 +21,6 @@ ModelImporter:
     100030: right_leg2
     100032: right_leg3
     100034: root
-    100036: teeth_down
-    100038: teeth_down 1
-    100040: teeth_up
-    100042: teeth_up 1
     400000: dude
     400002: dude_down
     400004: dude_middle
@@ -43,27 +39,14 @@ ModelImporter:
     400030: right_leg2
     400032: right_leg3
     400034: root
-    400036: teeth_down
-    400038: teeth_down 1
-    400040: teeth_up
-    400042: teeth_up 1
     2100000: lambert1
     4300000: dude
     4300002: hat
-    4300004: teeth_down
-    4300006: teeth_up
-    7400000: Take 001
+    7400000: Idle
     9500000: //RootNode
     13700000: dude
     13700002: hat
-    13700004: teeth_down
-    13700006: teeth_up
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: 5096e71bf89b46e48aad2ccd4402b5f6, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -92,10 +75,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: Idle
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 27
+      lastFrame: 22
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
