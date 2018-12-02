@@ -14,11 +14,11 @@ MonoBehaviour:
   clips:
   - {fileID: 8300000, guid: 2a1b322e01bd0004b835c20e788bc5af, type: 3}
   volume:
-    minValue: 0.8998121
-    maxValue: 0.8998121
+    minValue: 1
+    maxValue: 1
   pitch:
-    minValue: 0.9480276
-    maxValue: 0.9480276
+    minValue: 1.125
+    maxValue: 1.125
   time: 0
   loop: 0
   mixer: {fileID: 243901566972655138, guid: 5927d8f3f31623a4fb68f3aadc6a523d, type: 2}
