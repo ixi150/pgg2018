@@ -15,6 +15,8 @@ public class Collectible : MonoBehaviour, ICollectible
     public CollectibleType Type => _type;
 
     [SerializeField] private CollectibleType _type;
+    [SerializeField]
+    private GameObject _particlesOnDestroy;
 
     private CollectibleManager manager;
 
@@ -39,6 +41,9 @@ public class Collectible : MonoBehaviour, ICollectible
     public void OnEat()
     {
         if(manager) manager.SpawnNewItem();
+
+        if (_particlesOnDestroy != null)
+            Instantiate(_particlesOnDestroy, transform.position, _particlesOnDestroy.transform.rotation);
         Destroy(gameObject);
     }
 }

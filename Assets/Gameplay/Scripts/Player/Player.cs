@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GamepadInput;
+using UnityEngine.UI;
 
 using Xunity.ScriptableVariables;
 using Random = UnityEngine.Random;
@@ -16,23 +17,37 @@ public class Player : MonoBehaviour
     public float throwUpOffset = 0.5f;
     public Vector3 minThrowUpPower;
     public Vector3 maxThrowUpPower;
+
     public List<CollectibleType> eaten = new List<CollectibleType>();
 
     //public new BoxCollider collider;
 
-    Animator _animator;
-    PlayerRuntime _playerRuntime;
-    bool _blockInput;
+    public Text playerNumber;
+
+    private Animator _animator;
+    private PlayerRuntime _playerRuntime;
+    private bool _blockInput;
+    public Witch Vera { get; private set; }
+
+    public Texture[] textures;
+    public Material[] materials;
 
     private void Awake()
     {
+        Vera = FindObjectOfType<Witch>();
         _playerRuntime = GetComponent<PlayerRuntime>();
         _animator = GetComponentInChildren<Animator>();
     }
 
     private void Start()
     {
+        for (int i = 0; i < materials.Length; i++)
+        {
+
+        }
+
         _playerHitBox = GetComponentInChildren<PlayerHitBox>();
+        playerNumber.text = "P" + (int)input.player;
     }
 
     private void Update()

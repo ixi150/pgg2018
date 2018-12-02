@@ -20,7 +20,7 @@ public class GameUI : MonoBehaviour
 
     public void CheckScore(PointsBoard board)
     {
-        for (int i = pointBoards.Length - 1; i >= 0; i--)
+        for (int i = pointBoards.Length - 2; i >= 0; i--)
         {
             if (board.points > pointBoards[i].points)
             {

@@ -7,6 +7,8 @@ public class PlayerRuntime : MonoBehaviour
     public PlayerState PlayerState { get { return _playerState; } }
     private PlayerState _playerState;
 
+    public Transform model;
+
     [SerializeField]
     private float _speedMultiplier;
     [SerializeField]
@@ -16,6 +18,9 @@ public class PlayerRuntime : MonoBehaviour
 
     [SerializeField]
     private Transform _particleLoadParent, _particleShotParent;
+
+    [SerializeField]
+    private AnimationCurve _velocityDrop;
 
     private Transform _shotParent;
 
@@ -38,7 +43,7 @@ public class PlayerRuntime : MonoBehaviour
 
     private void Update()
     {
-        transform.rotation = Quaternion.Lerp(transform.rotation,
+        model.rotation = Quaternion.Lerp(transform.rotation,
             Quaternion.LookRotation(_lastMoveDirection, Vector3.up),
             _rotationMultiplier * Time.deltaTime);
     }
@@ -84,7 +89,7 @@ public class PlayerRuntime : MonoBehaviour
     private void ShotFromAss()
     {
         Transform obj = Instantiate(_shotPrefab, _playerAss.position, _playerAss.rotation);
-        obj.GetComponent<FartShoot>().Init(_player, -transform.forward);
+        obj.GetComponent<FartShoot>().Init(_player, -model.forward);
         obj.parent = _shotParent;
     }
 
@@ -107,7 +112,7 @@ public class PlayerRuntime : MonoBehaviour
     {
         Vector3 realAxis = new Vector3(axis.x, 0f, axis.y);
         _lastMoveDirection = realAxis;
-        rigid.MovePosition(transform.position + realAxis * _speedMultiplier * Time.deltaTime);
+        rigid.MovePosition(transform.position + realAxis * _speedMultiplier * Time.deltaTime * (_velocityDrop.Evaluate(_player.eaten.Count)));
         //Debug.LogWarning("PLAYER MOVE CHANGED TO: " + axis.ToString());
     }
 }

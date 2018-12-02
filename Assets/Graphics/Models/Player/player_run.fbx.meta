@@ -58,7 +58,12 @@ ModelImporter:
     13700002: hat
     13700004: teeth_down
     13700006: teeth_up
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 5096e71bf89b46e48aad2ccd4402b5f6, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
