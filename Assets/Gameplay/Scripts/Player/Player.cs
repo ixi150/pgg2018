@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _playerHitBox = GetComponentInChildren<PlayerHitBox>();
-        playerNumber.text = "P" + (int)input.player;
+        playerNumber.text = "F" + (int)input.player;
         _playerHitBox.OnSuccessfulPlayerBite += PlayBiteHitSound;
     }
 

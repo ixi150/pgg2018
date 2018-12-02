@@ -12,8 +12,12 @@ public class GameUI : MonoBehaviour
 
     GamePad.Index _currentLead = GamePad.Index.Any;
 
+    public GameObject winScreen;
+    public Text win;
+
     private void Start()
     {
+        winScreen.SetActive(false);
         for (int i = 0; i < pointBoards.Length; i++)
         {
             pointBoards[i].Init((GamePad.Index)i + 1, this);
@@ -41,7 +45,14 @@ public class GameUI : MonoBehaviour
 
     public void PLayWinSound()
     {
-        pointBoards[0].PlayLeadVoice();
+        pointBoards[0].PlayWinVoice();
+        ShowWinScreen();
+    }
+
+    public void ShowWinScreen()
+    {
+        win.text = "Familiar " + ((int)_currentLead + 1) + " Wins!";
+        winScreen.SetActive(true);
     }
 }
 
