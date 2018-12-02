@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public float throwUpOffset = 0.5f;
     public Vector3 minThrowUpPower;
     public Vector3 maxThrowUpPower;
+    
     public List<CollectibleType> eaten = new List<CollectibleType>();
 
     //public new BoxCollider collider;
