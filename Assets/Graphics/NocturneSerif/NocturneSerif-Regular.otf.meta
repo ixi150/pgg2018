@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 8f51963d114c2b347adc8a290c7ecc1f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Nocturne Serif
+  fontNames:
+  - Nocturne Serif
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 84c6204d96e4e1847a0239b378e69d34, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
