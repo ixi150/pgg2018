@@ -89,7 +89,7 @@ public class PlayerRuntime : MonoBehaviour
     private void ShotFromAss()
     {
         Transform obj = Instantiate(_shotPrefab, _playerAss.position, _playerAss.rotation);
-        obj.GetComponent<FartShoot>().Init(_player, -transform.forward);
+        obj.GetComponent<FartShoot>().Init(_player, -model.forward);
         obj.parent = _shotParent;
     }
 
