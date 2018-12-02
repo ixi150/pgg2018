@@ -20,7 +20,12 @@ ModelImporter:
     7400000: Take 001
     9500000: //RootNode
     13700000: mushroom1
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 51797c4c79d078948b10bb0baa98448e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

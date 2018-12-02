@@ -76,7 +76,12 @@ ModelImporter:
     13700008: leaves
     13700010: leg_left
     13700012: leg_right
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 21b3aac6b2b36f2478f04509353d2f8e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -127,7 +132,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.099999994
+    previousCalculatedGlobalScale: 0.14999999
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
