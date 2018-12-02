@@ -24,12 +24,14 @@ public class Player : MonoBehaviour
 
     public Text playerNumber;
 
-    Animator _animator;
-    PlayerRuntime _playerRuntime;
-    bool _blockInput;
+    private Animator _animator;
+    private PlayerRuntime _playerRuntime;
+    private bool _blockInput;
+    public Witch Vera { get; private set; }
 
     private void Awake()
     {
+        Vera = FindObjectOfType<Witch>();
         _playerRuntime = GetComponent<PlayerRuntime>();
         _animator = GetComponentInChildren<Animator>();
     }
