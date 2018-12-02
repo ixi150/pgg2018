@@ -10,7 +10,7 @@ public class CollectibleManager : MonoBehaviour
     public Collectible collectiblePrefab;
     public Vector2 SpawnArea = new Vector2(2, 2);
 
-    private int _items;
+    public int Items { get; set; }
     private Coroutine _coroutine;
     
     private void Start()
@@ -27,7 +27,7 @@ public class CollectibleManager : MonoBehaviour
 
     IEnumerator Spawn()
     {
-        while (_items < maxItems)
+        while (Items < maxItems)
         {
             yield return new WaitForSeconds(Random.Range(collectiblePrefab.Type.minSpawnTime, collectiblePrefab.Type.maxSpawnTime));
             SpawnItem();
@@ -41,7 +41,7 @@ public class CollectibleManager : MonoBehaviour
         var pos = transform.position;
         pos.x += Random.Range(-SpawnArea.x, SpawnArea.x);
         pos.z += Random.Range(-SpawnArea.y, SpawnArea.y);
-        _items++;
+        Items++;
         var item = Instantiate(collectiblePrefab, pos, Quaternion.identity).GetComponent<Collectible>();
         item.init(this);
         item.GetComponent<Animator>().Play("Spawn");
