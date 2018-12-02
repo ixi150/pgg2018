@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GamepadInput;
+using UnityEngine.UI;
 
 using Xunity.ScriptableVariables;
 using Random = UnityEngine.Random;
@@ -20,6 +21,8 @@ public class Player : MonoBehaviour
 
     //public new BoxCollider collider;
 
+    public Text playerNumber;
+
     Animator _animator;
     PlayerRuntime _playerRuntime;
     bool _blockInput;
@@ -33,6 +36,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _playerHitBox = GetComponentInChildren<PlayerHitBox>();
+        playerNumber.text = ((int)input.player).ToString();
     }
 
     private void Update()
