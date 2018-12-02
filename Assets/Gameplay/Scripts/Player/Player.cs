@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] PlayerAudioPack playerAudioPack;
     [SerializeField] AudioMultiPlayer audioPlayer;
-    
+
     private void Awake()
     {
         Vera = FindObjectOfType<Witch>();
@@ -92,6 +92,10 @@ public class Player : MonoBehaviour
     {
         _animator.Play("Eat");
         _playerHitBox.ClearHitBox();
+    }
+
+    public void PlayTryBiteSound()
+    {
         PlaySound(playerAudioPack.biteTry);
     }
 
@@ -181,12 +185,12 @@ public class Player : MonoBehaviour
     {
         PlaySound(playerAudioPack.step);
     }
-    
+
     void PlayBiteHitSound()
     {
         PlaySound(playerAudioPack.biteHit);
     }
-    
+
     private Coroutine _blockInputCoroutine;
     IEnumerator BlockInput()
     {

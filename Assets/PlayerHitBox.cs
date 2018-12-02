@@ -25,7 +25,6 @@ public class PlayerHitBox : MonoBehaviour
     {
         _hitObjects.Clear();
         _eatObject = false;
-        Debug.Log("Clear");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,12 +32,8 @@ public class PlayerHitBox : MonoBehaviour
         if (_hitObjects.Contains(other)) return;
         _hitObjects.Add(other);
 
-        //Debug.Log(other.gameObject.name);
-        //Debug.Log(_eatObject);
-
         if (!_eatObject)
         {
-            //Debug.Log("XXXXXX");
             var collectiblle = other.GetComponentInParent<ICollectible>();
             if (collectiblle != null)
             {

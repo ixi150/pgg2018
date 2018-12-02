@@ -20,4 +20,9 @@ public class PlayerAnimator : MonoBehaviour
     {
         _owner.PlayStepSound();
     }
+
+    public void PlayBite()
+    {
+        _owner.PlayTryBiteSound();
+    }
 }
