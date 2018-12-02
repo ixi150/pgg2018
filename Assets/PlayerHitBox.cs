@@ -60,9 +60,9 @@ public class PlayerHitBox : MonoBehaviour
         }
     }
 
-    private void OnGUI()
-    {
-        if (_owner.input.player == GamepadInput.GamePad.Index.One)
-            GUI.Label(new Rect(25, 25, 100, 25), _eatObject.ToString());
-    }
+//    private void OnGUI()
+//    {
+//        if (_owner.input.player == GamepadInput.GamePad.Index.One)
+//            GUI.Label(new Rect(25, 25, 100, 25), _eatObject.ToString());
+//    }
 }

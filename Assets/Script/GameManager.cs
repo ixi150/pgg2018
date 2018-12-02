@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     public Xunity.ScriptableEvents.GameEvent dontFightEvent;
     public Xunity.ScriptableEvents.GameEvent iSadstopEvent;
 
+    public AudioPlayer playerGave, playerGaveBonus;
+    
     public bool StaphActive { get; private set; }
 
     CollectibleType _currentBonus;
@@ -132,12 +134,18 @@ public class GameManager : MonoBehaviour
     public void AddPoints(GamePad.Index player, CollectibleType[] collectable)
     {
         int points = 0;
+        bool anyBonus = false;
         for (int i = 0; i < collectable.Length; i++)
         {
-            points += collectable[i].value * (collectable[i] == _currentBonus ? 3 : 1);
+            bool isBonus = collectable[i] == _currentBonus;
+            points += collectable[i].value * (isBonus ? 3 : 1);
+            anyBonus |= isBonus;
         }
 
         playerPoints[(int)player - 1].Set(playerPoints[(int)player - 1] + points);
+        playerGave.Play();
+        if(anyBonus)
+            playerGaveBonus.Play();
     }
 
     public float GetRandomTime()

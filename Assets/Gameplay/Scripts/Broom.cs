@@ -9,7 +9,9 @@ public class Broom : MonoBehaviour
 
     public float Speed = 5;
     public Transform StartPoint;
-
+    public AudioPlayer playerHit;
+    public AudioPlayer playerHit2;
+    
     private Witch _vera;
     private Player _target;
     private Animator _animator;
@@ -17,6 +19,8 @@ public class Broom : MonoBehaviour
     public void Hit()
     {
         _target.StunPlayer();
+        playerHit.Play();
+        playerHit2.Play();
     }
 
     protected void Awake()

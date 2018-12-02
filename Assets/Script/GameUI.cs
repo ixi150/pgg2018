@@ -83,7 +83,7 @@ public class PointsBoard
         _player = player;
         _ui = ui;
         points.ValueChanged += UpdateScore;
-        score.text = "Player : " + (int)_player + ": " + 0;
+        score.text = "Familiar" + (int)_player + ": " + 0;
     }
 
     public void Show()
@@ -98,7 +98,7 @@ public class PointsBoard
 
     public void UpdateScore(float value)
     {
-        score.text = "Player : " + (int)_player + ": " + value;
+        score.text = "Familiar" + (int)_player + ": " + value;
         _ui.CheckScore(this);
     }
 
