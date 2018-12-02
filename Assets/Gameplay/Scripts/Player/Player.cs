@@ -29,9 +29,6 @@ public class Player : MonoBehaviour
     private bool _blockInput;
     public Witch Vera { get; private set; }
 
-    public Texture[] textures;
-    public Material[] materials;
-
     private void Awake()
     {
         Vera = FindObjectOfType<Witch>();
@@ -41,11 +38,6 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < materials.Length; i++)
-        {
-
-        }
-
         _playerHitBox = GetComponentInChildren<PlayerHitBox>();
         playerNumber.text = "P" + (int)input.player;
     }
