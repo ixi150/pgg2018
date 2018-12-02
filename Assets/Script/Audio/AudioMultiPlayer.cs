@@ -21,6 +21,10 @@ namespace Script.Audio
             {
                 source = gameObject.AddComponent<AudioSource>();
                 source.spatialBlend = audioSource.spatialBlend;
+                source.minDistance = audioSource.minDistance;
+                source.maxDistance = audioSource.maxDistance;
+                source.SetCustomCurve(AudioSourceCurveType.CustomRolloff,
+                    audioSource.GetCustomCurve(AudioSourceCurveType.CustomRolloff));
                 audioSources.Add(ae, source);
             }
 
