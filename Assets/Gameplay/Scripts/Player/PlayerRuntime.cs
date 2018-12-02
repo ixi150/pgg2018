@@ -7,6 +7,8 @@ public class PlayerRuntime : MonoBehaviour
     public PlayerState PlayerState { get { return _playerState; } }
     private PlayerState _playerState;
 
+    public Transform model;
+
     [SerializeField]
     private float _speedMultiplier;
     [SerializeField]
@@ -38,7 +40,7 @@ public class PlayerRuntime : MonoBehaviour
 
     private void Update()
     {
-        transform.rotation = Quaternion.Lerp(transform.rotation,
+        model.rotation = Quaternion.Lerp(transform.rotation,
             Quaternion.LookRotation(_lastMoveDirection, Vector3.up),
             _rotationMultiplier * Time.deltaTime);
     }

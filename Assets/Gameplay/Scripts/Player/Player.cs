@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _playerHitBox = GetComponentInChildren<PlayerHitBox>();
-        playerNumber.text = ((int)input.player).ToString();
+        playerNumber.text = "P" + (int)input.player;
     }
 
     private void Update()
