@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour
                 dev_item.text = _currentBonus.ToString();
 
                 _currentBonus = CollectibleTypes[Random.Range(0, CollectibleTypes.Length)];
+                _currentBonus.OnIsDemandedEvent.Raise();
                 dev_item.enabled = true;
                 if (itemIcon) itemIcon.enabled = true;
                 yield return new WaitForSeconds(time - 3);

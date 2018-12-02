@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13a9f940313d06d4caed9863bf024ebf, type: 3}
+  m_Name: MenuMusic
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: ac11bee20e1f7b049995127f6582c208, type: 3}
+  volume:
+    minValue: 1
+    maxValue: 1
+  pitch:
+    minValue: 0.984127
+    maxValue: 0.984127
+  time: 0
+  loop: 1
+  mixer: {fileID: 243183623620331764, guid: 5927d8f3f31623a4fb68f3aadc6a523d, type: 2}

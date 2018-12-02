@@ -3,10 +3,10 @@ using System.Collections;
 using UnityEditor;
 
 [CustomEditor(typeof(AudioEvent), true)]
+[CanEditMultipleObjects]
 public class AudioEventEditor : Editor
 {
-
-	[SerializeField] private AudioSource _previewer;
+	[SerializeField] AudioSource _previewer;
 
 	public void OnEnable()
 	{

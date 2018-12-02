@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13a9f940313d06d4caed9863bf024ebf, type: 3}
+  m_Name: Win 3
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: b951befe5267a9449a645f1ee2509ced, type: 3}
+  volume:
+    minValue: 0.8998121
+    maxValue: 0.8998121
+  pitch:
+    minValue: 0.9480276
+    maxValue: 0.9480276
+  time: 0
+  loop: 0
+  mixer: {fileID: 243901566972655138, guid: 5927d8f3f31623a4fb68f3aadc6a523d, type: 2}
