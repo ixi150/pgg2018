@@ -33,9 +33,6 @@ public class GameUI : MonoBehaviour
             }
         }
 
-        Debug.Log(_currentLead);
-        Debug.Log(pointBoards[0]._player);
-        //Debug.Log("Add pints");
         if (_currentLead != pointBoards[0]._player)
         {
             pointBoards[0].PlayLeadVoice();
