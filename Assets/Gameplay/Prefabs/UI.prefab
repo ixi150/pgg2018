@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 224977516608931526}
   - component: {fileID: 222132790661630386}
   - component: {fileID: 114414196405794006}
+  - component: {fileID: 114339776563186010}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -300,7 +301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1983538198082674
 GameObject:
   m_ObjectHideFlags: 1
@@ -366,7 +367,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 84c6204d96e4e1847a0239b378e69d34, type: 3}
-    m_FontSize: 20
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -374,8 +375,8 @@ MonoBehaviour:
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'Player 1: 50'
 --- !u!114 &114048097121522124
@@ -395,19 +396,19 @@ MonoBehaviour:
     score: {fileID: 114996393129439186}
     leadEvent: {fileID: 11400000, guid: 30fe5c33e5f8d0747a07b8c7461c1b98, type: 2}
     winEvent: {fileID: 11400000, guid: 628196529b347714a8b1c381f4f09056, type: 2}
-    _player: 0
+    _player: 1
   - root: {fileID: 1958594526577482}
     points: {fileID: 11400000, guid: 5782593a4e1245b458128577cc2b3f60, type: 2}
     score: {fileID: 114968209367775678}
     leadEvent: {fileID: 11400000, guid: 6e23b132cf02b054ea7f7f9937766d4a, type: 2}
     winEvent: {fileID: 11400000, guid: 5ea3c826d686afe468a2c9b493b126b1, type: 2}
-    _player: 0
+    _player: 2
   - root: {fileID: 1688896323105030}
     points: {fileID: 11400000, guid: e1b99e9cd5989214e8c5b6076eb7c99a, type: 2}
     score: {fileID: 114035324320697920}
     leadEvent: {fileID: 11400000, guid: f1df9239114bfa84c98620f058998b60, type: 2}
     winEvent: {fileID: 11400000, guid: adbd7b90bd9c0484e966aca595260652, type: 2}
-    _player: 0
+    _player: 3
   winScreen: {fileID: 1254737386192228}
   win: {fileID: 114821744655328784}
 --- !u!114 &114075391182732976
@@ -582,6 +583,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114339776563186010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1160980236591412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!114 &114351334975438320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -621,7 +636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.03810866, g: 0.7924528, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -812,7 +827,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 84c6204d96e4e1847a0239b378e69d34, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -846,7 +861,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 84c6204d96e4e1847a0239b378e69d34, type: 3}
-    m_FontSize: 20
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -854,8 +869,8 @@ MonoBehaviour:
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'Player 1: 50'
 --- !u!114 &114996393129439186
@@ -879,7 +894,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 84c6204d96e4e1847a0239b378e69d34, type: 3}
-    m_FontSize: 20
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -887,8 +902,8 @@ MonoBehaviour:
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'Player 1: 50'
 --- !u!222 &222084599781734946
@@ -1200,7 +1215,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -21.73, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224690884732524738
@@ -1254,7 +1269,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -21.73, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224797612697684274
@@ -1318,7 +1333,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -21.73, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224977516608931526
