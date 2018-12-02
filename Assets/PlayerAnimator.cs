@@ -13,6 +13,6 @@ public class PlayerAnimator : MonoBehaviour
 
     public void ResetTrigger()
     {
-        _owner.ResetAttack();
+        _owner.ResetTriggers();
     }
 }

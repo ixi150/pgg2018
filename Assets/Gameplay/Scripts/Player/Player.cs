@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (_blockInput == false)
+        if (_blockInput == false || _animator.GetCurrentAnimatorStateInfo(0).IsTag("Stun"))
         {
             Vector2 axis = GamePad.GetAxis(GamePad.Axis.LeftStick, input.player);
             OnMoveInput(axis);
@@ -48,6 +48,10 @@ public class Player : MonoBehaviour
                 OnSecondaryInputDown();
             if (GamePad.GetButtonUp(GamePad.Button.B, input.player))
                 OnSecondaryInputUp();
+        }
+        else
+        {
+            _animator.SetFloat("Move", 0);
         }
 
         joystickNames = Input.GetJoystickNames();
@@ -73,9 +77,11 @@ public class Player : MonoBehaviour
         _playerHitBox.CleatHitBox();
     }
 
-    public void ResetAttack()
+    public void ResetTriggers()
     {
         _animator.Play("Idle", 0, 0);
+        _animator.ResetTrigger("Eat");
+        _animator.ResetTrigger("Stun");
     }
 
     public void ThrowUp()
@@ -145,6 +151,7 @@ public class Player : MonoBehaviour
 
         if (_blockInputCoroutine != null) StopCoroutine(_blockInputCoroutine);
         _blockInputCoroutine = StartCoroutine(BlockInput());
+        _animator.SetTrigger("Stun");
     }
 
     private Coroutine _blockInputCoroutine;
