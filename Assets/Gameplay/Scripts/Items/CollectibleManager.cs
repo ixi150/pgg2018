@@ -8,6 +8,7 @@ public class CollectibleManager : MonoBehaviour
 {
     public IntVariable maxItems;
     public Collectible collectiblePrefab;
+    public Vector2 SpawnArea = new Vector2(2, 2);
 
     private int _items;
     private Coroutine _coroutine;
@@ -34,13 +35,23 @@ public class CollectibleManager : MonoBehaviour
 
         _coroutine = null;
     }
-
-
+    
     void SpawnItem()
     {
+        var pos = transform.position;
+        pos.x += Random.Range(-SpawnArea.x, SpawnArea.x);
+        pos.z += Random.Range(-SpawnArea.y, SpawnArea.y);
         _items++;
-        var item = Instantiate(collectiblePrefab, transform.position, Quaternion.identity).GetComponent<Collectible>();
+        var item = Instantiate(collectiblePrefab, pos, Quaternion.identity).GetComponent<Collectible>();
         item.init(this);
         item.GetComponent<Animator>().Play("Spawn");
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = new Color(0, 1, 0, 0.25f);
+        Gizmos.DrawCube(transform.position, new Vector3(SpawnArea.x, 0 , SpawnArea.y));
+    }
+
+
 }
