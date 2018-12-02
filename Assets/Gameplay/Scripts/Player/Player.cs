@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (_blockInput == false || _animator.GetCurrentAnimatorStateInfo(0).IsTag("Stun"))
+        if (_blockInput == false && !_animator.GetCurrentAnimatorStateInfo(0).IsTag("Stun"))
         {
             Vector2 axis = GamePad.GetAxis(GamePad.Axis.LeftStick, input.player);
             OnMoveInput(axis);
