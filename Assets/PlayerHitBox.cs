@@ -45,6 +45,7 @@ public class PlayerHitBox : MonoBehaviour
             GameManager.Instance.OnPlayerBite();
             player.StunPlayer();
             player.ThrowUp();
+            _owner.Vera.Trigger(_owner);
         }
     }
 }
