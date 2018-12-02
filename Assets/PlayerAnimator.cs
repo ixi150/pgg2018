@@ -18,6 +18,6 @@ public class PlayerAnimator : MonoBehaviour
 
     public void MoveStep()
     {
-        //_owner.PlayStepSound();
+        _owner.PlayStepSound();
     }
 }

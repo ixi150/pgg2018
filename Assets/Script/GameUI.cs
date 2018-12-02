@@ -20,7 +20,7 @@ public class GameUI : MonoBehaviour
 
     public void CheckScore(PointsBoard board)
     {
-        var currentFirstPlayer = pointBoards[0];
+        var currentFirstPlayer = pointBoards[0]._player;
 
         for (int i = pointBoards.Length - 2; i >= 0; i--)
         {
@@ -30,8 +30,9 @@ public class GameUI : MonoBehaviour
             }
         }
 
-        if (currentFirstPlayer != pointBoards[0])
+        if (currentFirstPlayer != pointBoards[0]._player)
         {
+            Debug.Log("X");
             pointBoards[0].PlayLeadVoice();
         }
     }
@@ -49,11 +50,11 @@ public class PointsBoard
     public FloatVariable points;
     public Text score;
 
-    Xunity.ScriptableEvents.GameEvent leadEvent;
-    Xunity.ScriptableEvents.GameEvent winEvent;
+    public Xunity.ScriptableEvents.GameEvent leadEvent;
+    public Xunity.ScriptableEvents.GameEvent winEvent;
 
     GameUI _ui;
-    GamePad.Index _player;
+    public GamePad.Index _player;
 
     public void Init(GamePad.Index player, GameUI ui)
     {
@@ -81,7 +82,11 @@ public class PointsBoard
 
     public void PlayLeadVoice()
     {
-        if (leadEvent != null) leadEvent.Raise();
+        if (leadEvent != null)
+        {
+            leadEvent.Raise();
+            Debug.Log("Play lead sound");
+        }
     }
 
     public void PlayWinVoice()
