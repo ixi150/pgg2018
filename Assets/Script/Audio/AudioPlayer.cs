@@ -1,19 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using UnityEngine;
 using Xunity.ScriptableEvents;
 
 [RequireComponent(typeof(AudioSource))]
-public class AudioPlayer : GameEventListener
+public class AudioPlayer : GameEventListenerBase
 {
-    [SerializeField] bool playOnEnable;
     [SerializeField] AudioEvent audioEvent;
+    [SerializeField] bool playOnEnable;
 
     AudioSource audioSource;
 
     public void Play()
     {
-        audioEvent.Play(audioSource);
+        if (audioEvent)
+            audioEvent.Play(audioSource);
     }
 
     void Awake()
@@ -31,7 +33,6 @@ public class AudioPlayer : GameEventListener
 
     public override void OnEventRaised()
     {
-        base.OnEventRaised();
         Play();
     }
 
