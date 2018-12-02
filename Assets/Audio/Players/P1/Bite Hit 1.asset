@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Name: Bite Hit 1
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: 5f194d6727f39cb4eb27a1d1eef4120b, type: 3}
-  - {fileID: 8300000, guid: 52b1197288ad2a447934d7a656cc59c9, type: 3}
+  - {fileID: 8300000, guid: 7aba593576c5dd841987f35ff0eb4fc8, type: 3}
   volume:
-    minValue: 0.6888889
-    maxValue: 0.8888889
+    minValue: 0.638795
+    maxValue: 0.838795
   pitch:
     minValue: 1.2083334
     maxValue: 1.2083334

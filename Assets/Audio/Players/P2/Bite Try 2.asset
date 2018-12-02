@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Name: Bite Try 2
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: c50b0b4e427ac3f49bb027fcda3aabd1, type: 3}
+  - {fileID: 8300000, guid: 39ca55788b5730147b5e404af4d6fe23, type: 3}
   volume:
     minValue: 0.4904762
     maxValue: 0.6904762
   pitch:
-    minValue: 1.022222
-    maxValue: 1.1682534
+    minValue: 1.2360677
+    maxValue: 1.2360677
   time: 0
   loop: 0
   mixer: {fileID: 243564214219198130, guid: 5927d8f3f31623a4fb68f3aadc6a523d, type: 2}

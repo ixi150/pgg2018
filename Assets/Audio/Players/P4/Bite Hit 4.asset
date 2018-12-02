@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Name: Bite Hit 4
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: 5f194d6727f39cb4eb27a1d1eef4120b, type: 3}
-  - {fileID: 8300000, guid: 52b1197288ad2a447934d7a656cc59c9, type: 3}
+  - {fileID: 8300000, guid: baa92587c259bd84a875d800c6836c43, type: 3}
   volume:
-    minValue: 0.6888889
-    maxValue: 0.8888889
+    minValue: 0.86887914
+    maxValue: 1
   pitch:
-    minValue: 1.2083334
-    maxValue: 1.2083334
+    minValue: 0.985598
+    maxValue: 0.985598
   time: 0
   loop: 0
   mixer: {fileID: 243564214219198130, guid: 5927d8f3f31623a4fb68f3aadc6a523d, type: 2}

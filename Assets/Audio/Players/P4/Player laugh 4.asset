@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Name: Player laugh 4
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: 1d3aaf50d891df34ab0ce82d4a104b92, type: 3}
-  - {fileID: 8300000, guid: 1fbc5157265434845989f54a93582f93, type: 3}
   - {fileID: 8300000, guid: a1a1acdbb29318c4daf5f43e3c24a8d3, type: 3}
   volume:
     minValue: 0.5
