@@ -19,9 +19,9 @@ namespace Script.Audio
             AudioSource source;
             if (!audioSources.TryGetValue(ae, out source))
             {
-                var newSource = gameObject.AddComponent<AudioSource>();
-                newSource.spatialBlend = audioSource.spatialBlend;
-                audioSources.Add(ae, newSource);
+                source = gameObject.AddComponent<AudioSource>();
+                source.spatialBlend = audioSource.spatialBlend;
+                audioSources.Add(ae, source);
             }
 
             return source;
