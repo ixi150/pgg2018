@@ -2905,7 +2905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec259050b10c5439b5f30f29b5fad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxItems: {fileID: 11400000, guid: 1ad40be0e2ddb034791fc759d69f9600, type: 2}
+  maxItems: {fileID: 11400000, guid: d1001d4132692454c85d0b4ff3635a65, type: 2}
   collectiblePrefab: {fileID: 114913660828585138, guid: f5575a71c7f0c0947a124bb1127cefdb,
     type: 2}
   SpawnArea: {x: 2, y: 2}
@@ -4290,7 +4290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec259050b10c5439b5f30f29b5fad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxItems: {fileID: 11400000, guid: 1ad40be0e2ddb034791fc759d69f9600, type: 2}
+  maxItems: {fileID: 11400000, guid: 2b963225cfdd34e45bc1fd25b9a6c5fb, type: 2}
   collectiblePrefab: {fileID: 114320424383426542, guid: f2ff8e87c7fe0ce4b8946bcf7380b286,
     type: 2}
   SpawnArea: {x: 2, y: 2}

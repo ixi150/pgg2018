@@ -49,6 +49,13 @@ public class GameUI : MonoBehaviour
     {
         pointBoards[(int)_currentLead - 1].PlayWinVoice();
         ShowWinScreen();
+        StartCoroutine(RsetGame());
+    }
+
+    IEnumerator RsetGame()
+    {
+        yield return new WaitForSeconds(3);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
     public void ShowWinScreen()
