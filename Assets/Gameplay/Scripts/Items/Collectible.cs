@@ -40,7 +40,11 @@ public class Collectible : MonoBehaviour, ICollectible
 
     public void OnEat()
     {
-        if(manager) manager.SpawnNewItem();
+        if (manager)
+        {
+            manager.Items--;
+            manager.SpawnNewItem();
+        }
 
         if (_particlesOnDestroy != null)
             Instantiate(_particlesOnDestroy, transform.position, _particlesOnDestroy.transform.rotation);

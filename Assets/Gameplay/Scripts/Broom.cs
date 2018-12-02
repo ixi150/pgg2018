@@ -52,8 +52,8 @@ public class Broom : MonoBehaviour
         _animator.CrossFadeInFixedTime("Follow", 0.1f);
         while (transform.position != player.transform.position)
         {
-            transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, Speed * Time.deltaTime);
             yield return null;
+            transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, Speed * Time.deltaTime);
         }
         _animator.Play("Hit");
         float time = 1;

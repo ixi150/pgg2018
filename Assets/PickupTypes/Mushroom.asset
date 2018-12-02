@@ -17,7 +17,7 @@ MonoBehaviour:
   - {fileID: 1299746928866632, guid: a812ba9f58396e447ba9580fac163c20, type: 2}
   - {fileID: 1299746928866632, guid: 3a8570dbee726e141a958d1f20f2d82d, type: 2}
   - {fileID: 1299746928866632, guid: e2ea73e1e66d8fc47a118b2f5b65da38, type: 2}
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 3012bcb3ec3547a40bfc9724f520600b, type: 3}
   minSpawnTime:
     reference: {fileID: 0}
     value: 4

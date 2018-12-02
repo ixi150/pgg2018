@@ -46,6 +46,7 @@ public class Witch : MonoBehaviour
         {
             _rage = 0;
             InRage = true;
+            GameManager.Instance.staphObject.SetActive(true);
             _rageEndTime = Time.time + RageLength;
         }
         _rage -= RageDegenerationSpeed * Time.deltaTime;
@@ -54,6 +55,7 @@ public class Witch : MonoBehaviour
         {
             _rage = 0;
             InRage = false;
+            GameManager.Instance.staphObject.SetActive(false);
         }
     }
 }
