@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 2, y: -2}
+  m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
 --- !u!1001 &24970352
 Prefab:
@@ -238,11 +238,6 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 137097854394282472, guid: c322a71cddcfc744b8fa07ec5d71b3c9,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c322a71cddcfc744b8fa07ec5d71b3c9, type: 2}
   m_IsPrefabAsset: 0
@@ -395,7 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 2, y: -2}
+  m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
 --- !u!1 &126708631
 GameObject:
@@ -2637,8 +2632,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4cc30c51ae6288a4881c65ed059a0743, type: 2}
   - {fileID: 11400000, guid: 326bcab1b99f8f74a80137f9ac16f3db, type: 2}
   - {fileID: 11400000, guid: 78e29b5433d2eef4ebabdf5c76a57275, type: 2}
-  dontFightEvent: {fileID: 0}
-  iSadstopEvent: {fileID: 0}
+  dontFightEvent: {fileID: 11400000, guid: b09b61dceded751438b050dffecaa8a7, type: 2}
+  iSadstopEvent: {fileID: 11400000, guid: b3fb3ea96936ec84fb5d46c0df6b4b8a, type: 2}
+  left15SecEvent: {fileID: 11400000, guid: b22beb94d0dcfb346808c09396962870, type: 2}
   playerGave: {fileID: 252256634}
   playerGaveBonus: {fileID: 1015744243}
   playerPoints:
@@ -3345,7 +3341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 2, y: -2}
+  m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
 --- !u!4 &1068899658 stripped
 Transform:
@@ -3593,7 +3589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec259050b10c5439b5f30f29b5fad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxItems: {fileID: 11400000, guid: 1ad40be0e2ddb034791fc759d69f9600, type: 2}
+  maxItems: {fileID: 11400000, guid: d1001d4132692454c85d0b4ff3635a65, type: 2}
   collectiblePrefab: {fileID: 114913660828585138, guid: f5575a71c7f0c0947a124bb1127cefdb,
     type: 2}
   SpawnArea: {x: 2, y: 2}
@@ -4891,7 +4887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec259050b10c5439b5f30f29b5fad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxItems: {fileID: 11400000, guid: 1ad40be0e2ddb034791fc759d69f9600, type: 2}
+  maxItems: {fileID: 11400000, guid: 2b963225cfdd34e45bc1fd25b9a6c5fb, type: 2}
   collectiblePrefab: {fileID: 114320424383426542, guid: f2ff8e87c7fe0ce4b8946bcf7380b286,
     type: 2}
   SpawnArea: {x: 2, y: 2}

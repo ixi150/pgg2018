@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
 
     public Xunity.ScriptableEvents.GameEvent dontFightEvent;
     public Xunity.ScriptableEvents.GameEvent iSadstopEvent;
+    public Xunity.ScriptableEvents.GameEvent left15SecEvent;
 
     public AudioPlayer playerGave, playerGaveBonus;
     
@@ -126,6 +127,12 @@ public class GameManager : MonoBehaviour
             ui.PLayWinSound();
             timerUI.gameObject.SetActive(false);
             Debug.Log("GAME END");
+        }
+
+        if (left15SecEvent && currentTimer <= 17)
+        {
+            left15SecEvent.Raise();
+            left15SecEvent = null;
         }
     }
 
