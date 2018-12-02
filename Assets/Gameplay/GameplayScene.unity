@@ -4084,6 +4084,24 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 049c955ce7fc38040b542be334875581, type: 3}
   m_IsPrefabAsset: 0
+--- !u!1 &1597853925 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 049c955ce7fc38040b542be334875581,
+    type: 3}
+  m_PrefabInternal: {fileID: 1597853924}
+--- !u!136 &1597853926
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1597853925}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.4884254
+  m_Height: 1.79
+  m_Direction: 2
+  m_Center: {x: -0.005104482, y: 0.003965589, z: 0.4254078}
 --- !u!1001 &1599245725
 Prefab:
   m_ObjectHideFlags: 0
