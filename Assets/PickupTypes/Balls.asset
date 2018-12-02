@@ -26,3 +26,5 @@ MonoBehaviour:
     reference: {fileID: 0}
     value: 1
     useConstant: 1
+  GatheredSound: {fileID: 11400000, guid: 3b483c0ea8f68ae499ffe479c4108d0b, type: 2}
+  OnIsDemandedEvent: {fileID: 11400000, guid: 5394be1144d864747a40df27fcbb9ce4, type: 2}

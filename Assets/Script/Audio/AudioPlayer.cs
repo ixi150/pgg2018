@@ -7,12 +7,18 @@ using Xunity.ScriptableEvents;
 [RequireComponent(typeof(AudioSource))]
 public class AudioPlayer : GameEventListenerBase
 {
-    [SerializeField] AudioEvent audioEvent;
-    [SerializeField] bool playOnEnable;
+    [SerializeField] protected AudioEvent audioEvent;
+    [SerializeField] protected bool playOnEnable;
 
-    AudioSource audioSource;
+    protected AudioSource audioSource;
 
-    public void Play()
+    public AudioEvent AudioEvent
+    {
+        get { return audioEvent; }
+        set { audioEvent = value; }
+    }
+    
+    public virtual void Play()
     {
         if (audioEvent)
             audioEvent.Play(audioSource);

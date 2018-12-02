@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class PlayerHitBox : MonoBehaviour
     Player _owner;
     List<Collider> _hitObjects = new List<Collider>();
 
+    public event Action OnSuccessfulPlayerBite = delegate {  }; 
+    
     private void Awake()
     {
         _owner = GetComponentInParent<Player>();
@@ -17,7 +20,7 @@ public class PlayerHitBox : MonoBehaviour
         GetComponent<BoxCollider>().enabled = false;
     }
 
-    public void CleatHitBox()
+    public void ClearHitBox()
     {
         _hitObjects.Clear();
     }
@@ -46,6 +49,7 @@ public class PlayerHitBox : MonoBehaviour
             player.StunPlayer();
             player.ThrowUp();
             _owner.Vera.Trigger(_owner);
+            OnSuccessfulPlayerBite();
         }
     }
 }

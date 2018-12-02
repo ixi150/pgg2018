@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Xunity.ScriptableEvents;
 using Xunity.ScriptableReferences;
 using Xunity.ScriptableVariables;
 
@@ -12,4 +13,6 @@ public class CollectibleType : ScriptableObject
     public Sprite Image;
     public FloatReference minSpawnTime, maxSpawnTime;
     public IntReference value;
+    public AudioEvent GatheredSound;
+    public GameEvent OnIsDemandedEvent;
 }

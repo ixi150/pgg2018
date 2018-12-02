@@ -154,8 +154,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1186053228784620}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.11, y: 0.5, z: 1.23}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4139258528913846}
@@ -400,13 +400,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 0}
-  response:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  audioEvent: {fileID: 11400000, guid: d63b4d85a08ecd241925478e46325d9f, type: 2}
   playOnEnable: 1
-  audioEvent: {fileID: 0}
 --- !u!114 &114385240622328548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -430,13 +425,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 0}
-  response:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  audioEvent: {fileID: 11400000, guid: a5ffae745f08a5847a7a822aa9347f10, type: 2}
   playOnEnable: 1
-  audioEvent: {fileID: 0}
 --- !u!114 &114913660828585138
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GamepadInput;
+using Script.Audio;
 using UnityEngine.UI;
 
 using Xunity.ScriptableVariables;
@@ -29,9 +30,9 @@ public class Player : MonoBehaviour
     private bool _blockInput;
     public Witch Vera { get; private set; }
 
-    public Texture[] textures;
-    public Material[] materials;
-
+    [SerializeField] PlayerAudioPack playerAudioPack;
+    [SerializeField] AudioMultiPlayer audioPlayer;
+    
     private void Awake()
     {
         Vera = FindObjectOfType<Witch>();
@@ -41,13 +42,14 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < materials.Length; i++)
-        {
-
-        }
-
         _playerHitBox = GetComponentInChildren<PlayerHitBox>();
         playerNumber.text = "P" + (int)input.player;
+        _playerHitBox.OnSuccessfulPlayerBite += PlayBiteHitSound;
+    }
+
+    void OnDestroy()
+    {
+        _playerHitBox.OnSuccessfulPlayerBite -= PlayBiteHitSound;
     }
 
     private void Update()
@@ -89,7 +91,8 @@ public class Player : MonoBehaviour
     private void OnPrimaryInput()
     {
         _animator.Play("Eat");
-        _playerHitBox.CleatHitBox();
+        _playerHitBox.ClearHitBox();
+        PlaySound(playerAudioPack.biteTry);
     }
 
     public void ResetTriggers()
@@ -112,6 +115,7 @@ public class Player : MonoBehaviour
         power.z = Random.Range(minThrowUpPower.z, maxThrowUpPower.z);
         var throwed = Instantiate(item.Prefab, transform.position + power.normalized * throwUpOffset, Quaternion.identity);
         throwed.GetComponent<Rigidbody>().AddForce(power);
+        PlaySound(playerAudioPack.burp);
     }
 
     public void ThrowUp(int count)
@@ -139,12 +143,15 @@ public class Player : MonoBehaviour
     {
         if (SecondaryInputUp != null)
             SecondaryInputUp();
+        PlaySound(playerAudioPack.fart);
     }
 
     public void eat(ICollectible collectible)
     {
         eaten.Add(collectible.Type);
         collectible.OnEat();
+        PlaySound(collectible.Type.GatheredSound);
+        PlaySound(playerAudioPack.laugh);
     }
 
     public CollectibleType[] GetAllEaten()
@@ -167,8 +174,19 @@ public class Player : MonoBehaviour
         if (_blockInputCoroutine != null) StopCoroutine(_blockInputCoroutine);
         _blockInputCoroutine = StartCoroutine(BlockInput());
         _animator.SetTrigger("Stun");
+        PlaySound(playerAudioPack.hurt);
     }
 
+    public void PlayStepSound()
+    {
+        PlaySound(playerAudioPack.step);
+    }
+    
+    void PlayBiteHitSound()
+    {
+        PlaySound(playerAudioPack.biteHit);
+    }
+    
     private Coroutine _blockInputCoroutine;
     IEnumerator BlockInput()
     {
@@ -176,5 +194,11 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(2);
         _blockInput = false;
         _blockInputCoroutine = null;
+    }
+
+    void PlaySound(AudioEvent audioEvent)
+    {
+        audioPlayer.AudioEvent = audioEvent;
+        audioPlayer.Play();
     }
 }
