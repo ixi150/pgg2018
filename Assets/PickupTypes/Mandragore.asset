@@ -14,7 +14,7 @@ MonoBehaviour:
   Prefab: {fileID: 114913660828585138, guid: f5575a71c7f0c0947a124bb1127cefdb, type: 2}
   Views:
   - {fileID: 1299746928866632, guid: 7201da067c90fa147b676344699037bf, type: 2}
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 241762f9f1315eb43bc9e6a52e286ce1, type: 3}
   minSpawnTime:
     reference: {fileID: 0}
     value: 2
