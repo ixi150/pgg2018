@@ -8,6 +8,6 @@ public class ColliectibleViewSpawner : MonoBehaviour
     {
         var collectible = GetComponent<ICollectible>();
         if (collectible == null) return;
-        Instantiate(collectible.Type.View, transform.Find("View"), false);
+        Instantiate(collectible.Type.Views[Random.Range(0, collectible.Type.Views.Length)], transform.Find("View"), false);
     }
 }

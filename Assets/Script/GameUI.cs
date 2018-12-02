@@ -20,6 +20,8 @@ public class GameUI : MonoBehaviour
 
     public void CheckScore(PointsBoard board)
     {
+        var currentFirstPlayer = pointBoards[0];
+
         for (int i = pointBoards.Length - 2; i >= 0; i--)
         {
             if (board.points > pointBoards[i].points)
@@ -27,6 +29,16 @@ public class GameUI : MonoBehaviour
                 board.root.transform.SetSiblingIndex(pointBoards[i].root.transform.GetSiblingIndex());
             }
         }
+
+        if (currentFirstPlayer != pointBoards[0])
+        {
+            pointBoards[0].PlayLeadVoice();
+        }
+    }
+
+    public void PLayWinSound()
+    {
+        pointBoards[0].PlayLeadVoice();
     }
 }
 
@@ -36,6 +48,9 @@ public class PointsBoard
     public GameObject root;
     public FloatVariable points;
     public Text score;
+
+    Xunity.ScriptableEvents.GameEvent leadEvent;
+    Xunity.ScriptableEvents.GameEvent winEvent;
 
     GameUI _ui;
     GamePad.Index _player;
@@ -62,5 +77,15 @@ public class PointsBoard
     {
         score.text = "Player : " + (int)_player + ": " + value;
         _ui.CheckScore(this);
+    }
+
+    public void PlayLeadVoice()
+    {
+        if (leadEvent != null) leadEvent.Raise();
+    }
+
+    public void PlayWinVoice()
+    {
+        if (winEvent != null) winEvent.Raise();
     }
 }
