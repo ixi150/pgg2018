@@ -7,9 +7,10 @@ public class PlayerHitBox : MonoBehaviour
 {
     Player _owner;
     List<Collider> _hitObjects = new List<Collider>();
+    bool _eatObject;
 
-    public event Action OnSuccessfulPlayerBite = delegate {  }; 
-    
+    public event Action OnSuccessfulPlayerBite = delegate { };
+
     private void Awake()
     {
         _owner = GetComponentInParent<Player>();
@@ -23,6 +24,8 @@ public class PlayerHitBox : MonoBehaviour
     public void ClearHitBox()
     {
         _hitObjects.Clear();
+        _eatObject = false;
+        Debug.Log("Clear");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -30,10 +33,18 @@ public class PlayerHitBox : MonoBehaviour
         if (_hitObjects.Contains(other)) return;
         _hitObjects.Add(other);
 
-        var collectiblle = other.GetComponentInParent<ICollectible>();
-        if (collectiblle != null)
+        //Debug.Log(other.gameObject.name);
+        //Debug.Log(_eatObject);
+
+        if (!_eatObject)
         {
-            _owner.eat(collectiblle);
+            //Debug.Log("XXXXXX");
+            var collectiblle = other.GetComponentInParent<ICollectible>();
+            if (collectiblle != null)
+            {
+                _owner.eat(collectiblle);
+                _eatObject = true;
+            }
         }
 
         var player = other.GetComponentInParent<Player>();
@@ -43,6 +54,7 @@ public class PlayerHitBox : MonoBehaviour
             {
                 _owner.ThrowUpAll();
                 _owner.StunPlayer();
+                if (GameManager.Instance.iSadstopEvent != null) GameManager.Instance.iSadstopEvent.Raise();
             }
 
             GameManager.Instance.OnPlayerBite();
@@ -51,5 +63,11 @@ public class PlayerHitBox : MonoBehaviour
             _owner.Vera.Trigger(_owner);
             OnSuccessfulPlayerBite();
         }
+    }
+
+    private void OnGUI()
+    {
+        if (_owner.input.player == GamepadInput.GamePad.Index.One)
+            GUI.Label(new Rect(25, 25, 100, 25), _eatObject.ToString());
     }
 }

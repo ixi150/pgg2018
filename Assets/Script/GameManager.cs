@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
 
+    public Xunity.ScriptableEvents.GameEvent dontFightEvent;
+    public Xunity.ScriptableEvents.GameEvent iSadstopEvent;
+
     public bool StaphActive { get; private set; }
 
     CollectibleType _currentBonus;
@@ -166,6 +169,8 @@ public class GameManager : MonoBehaviour
 
     IEnumerator WaitForStaphEnd()
     {
+        if (dontFightEvent != null) dontFightEvent.Raise();
+
         staphObject.SetActive(true);
         StaphActive = true;
         yield return new WaitForSeconds(staphTime);

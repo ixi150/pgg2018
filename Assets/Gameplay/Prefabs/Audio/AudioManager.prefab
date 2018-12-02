@@ -166,7 +166,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 16.308552
   MaxDistance: 500
-  Pan2D: 0
+  Pan2D: -0.3
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -261,7 +261,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 0.8
+  Pan2D: 0.7
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -442,8 +442,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: e2a3a03162028274db18bf8366a61bc0, type: 2}
-  playOnEnable: 0
   audioEvent: {fileID: 11400000, guid: 33ff9d317964ace408d924bb05bea848, type: 2}
+  playOnEnable: 0
 --- !u!114 &114016328641068828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -456,8 +456,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: b22beb94d0dcfb346808c09396962870, type: 2}
-  playOnEnable: 0
   audioEvent: {fileID: 11400000, guid: 2d0453a21c119c345a6ea2eaba53ad98, type: 2}
+  playOnEnable: 0
 --- !u!114 &114170743026122192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -470,8 +470,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: adbd7b90bd9c0484e966aca595260652, type: 2}
-  playOnEnable: 0
   audioEvent: {fileID: 11400000, guid: db80f7722ff0dce4a8e927fba2793cdd, type: 2}
+  playOnEnable: 0
 --- !u!114 &114212727347794304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -484,8 +484,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: 99cd296b0844855468397078b2d60cd7, type: 2}
-  playOnEnable: 0
   audioEvent: {fileID: 11400000, guid: 939283754291a8f4db5b83b0aef83950, type: 2}
+  playOnEnable: 0
 --- !u!114 &114324466768195444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -498,8 +498,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: 5394be1144d864747a40df27fcbb9ce4, type: 2}
-  playOnEnable: 0
   audioEvent: {fileID: 11400000, guid: 054cffe5488187a4098c50c5b69faf26, type: 2}
+  playOnEnable: 0
 --- !u!114 &114431701265044408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -512,8 +512,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: f32ce5600485d7348bacbcb0636fbad0, type: 2}
-  playOnEnable: 0
   audioEvent: {fileID: 11400000, guid: 74fe9322a3d804943beb9219de43b99a, type: 2}
+  playOnEnable: 0
 --- !u!114 &114446880030953290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -526,8 +526,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: 6e23b132cf02b054ea7f7f9937766d4a, type: 2}
-  playOnEnable: 0
   audioEvent: {fileID: 11400000, guid: 6c5bf1ec1248a514193aaa1d9ced2108, type: 2}
+  playOnEnable: 0
 --- !u!114 &114493066970177170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -540,22 +540,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: b3fb3ea96936ec84fb5d46c0df6b4b8a, type: 2}
-  playOnEnable: 0
   audioEvent: {fileID: 11400000, guid: 9c57afaec0b9c2b4aa0123eca522b7a3, type: 2}
+  playOnEnable: 0
 --- !u!114 &114568359390180306
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1446155774223916}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 838fb2899dd75e346bf661e2c2a8851a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 0}
-  playOnEnable: 1
   audioEvent: {fileID: 11400000, guid: 2d4de3789ffb63b41b4e7297a75573c6, type: 2}
+  playOnEnable: 1
 --- !u!114 &114707309361614370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -568,8 +568,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: 628196529b347714a8b1c381f4f09056, type: 2}
-  playOnEnable: 0
   audioEvent: {fileID: 11400000, guid: 490f4cb0ec00ed4448e0b9ef4bf292dd, type: 2}
+  playOnEnable: 0
 --- !u!114 &114744610743312284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -582,8 +582,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: 5ea3c826d686afe468a2c9b493b126b1, type: 2}
-  playOnEnable: 0
   audioEvent: {fileID: 11400000, guid: 53f561d1d86f10b49a301897dc343581, type: 2}
+  playOnEnable: 0
 --- !u!114 &114762271951809706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -596,8 +596,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: f1df9239114bfa84c98620f058998b60, type: 2}
-  playOnEnable: 0
   audioEvent: {fileID: 11400000, guid: fd7bbdf433e3c42408ab256dddc2a838, type: 2}
+  playOnEnable: 0
 --- !u!114 &114840741338442368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -610,8 +610,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: 30fe5c33e5f8d0747a07b8c7461c1b98, type: 2}
-  playOnEnable: 0
   audioEvent: {fileID: 11400000, guid: 285e4588cf9461e48beda3f2b6f72c42, type: 2}
+  playOnEnable: 0
 --- !u!114 &114871691637452760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -624,8 +624,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: b09b61dceded751438b050dffecaa8a7, type: 2}
-  playOnEnable: 0
   audioEvent: {fileID: 11400000, guid: fc976a47d0959264ca15948636a5210b, type: 2}
+  playOnEnable: 0
 --- !u!114 &114888350587771998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -638,8 +638,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: 75b641c5334a6ea47bd8936c1d8595fd, type: 2}
-  playOnEnable: 0
   audioEvent: {fileID: 11400000, guid: f76f9d4e12f87e34c980a510c723b6fb, type: 2}
+  playOnEnable: 1
 --- !u!114 &114892606329025942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -652,5 +652,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: c23fff4353db87041beae819aa3d9a12, type: 2}
-  playOnEnable: 0
   audioEvent: {fileID: 11400000, guid: 1ab09e21953f78540a1a3f85225e50e7, type: 2}
+  playOnEnable: 0

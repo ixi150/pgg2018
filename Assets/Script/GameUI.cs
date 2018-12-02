@@ -10,6 +10,8 @@ public class GameUI : MonoBehaviour
 {
     public PointsBoard[] pointBoards = new PointsBoard[4];
 
+    GamePad.Index _currentLead = GamePad.Index.Any;
+
     private void Start()
     {
         for (int i = 0; i < pointBoards.Length; i++)
@@ -27,12 +29,12 @@ public class GameUI : MonoBehaviour
             if (board.points > pointBoards[i].points)
             {
                 board.root.transform.SetSiblingIndex(pointBoards[i].root.transform.GetSiblingIndex());
+                if (i == 0) _currentLead = board._player;
             }
         }
 
-        if (currentFirstPlayer != pointBoards[0]._player)
+        if (_currentLead != pointBoards[0]._player)
         {
-            Debug.Log("X");
             pointBoards[0].PlayLeadVoice();
         }
     }
